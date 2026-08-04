@@ -186,6 +186,50 @@
     </div>
   </section>
 
+  <!-- ===== PRODUCT DETAILS ===== -->
+  <section class="section" id="producto">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title">Todo el poder de <span class="accent-teal">CapCut PRO</span></h2>
+        <p class="section__subtitle">Desbloquea las herramientas que usan los creadores top para viralizar sus videos.</p>
+      </div>
+      <!-- Additional product details could go here in a grid. Keeping it minimal for Spatial UI. -->
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section" id="como-funciona">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title">¿Cómo <span class="accent-purple">funciona?</span></h2>
+        <p class="section__subtitle">Activa tu cuenta en menos de 5 minutos, sin procesos largos ni complicaciones.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card glass-card reveal">
+          <div class="step-card__number">1</div>
+          <h3 class="step-card__title">Ves el anuncio</h3>
+          <p class="step-card__text">Descubres nuestra increíble oferta de MangelStore.</p>
+        </div>
+        <div class="step-card glass-card reveal" style="transition-delay: 0.1s;">
+          <div class="step-card__number">2</div>
+          <h3 class="step-card__title">Clic a WhatsApp</h3>
+          <p class="step-card__text">Nos escribes y te atendemos al instante.</p>
+        </div>
+        <div class="step-card glass-card reveal" style="transition-delay: 0.2s;">
+          <div class="step-card__number">3</div>
+          <h3 class="step-card__title">Te Conectas</h3>
+          <p class="step-card__text">Realizas el pago y te enviamos tus accesos seguros.</p>
+        </div>
+        <div class="step-card glass-card reveal" style="transition-delay: 0.3s;">
+          <div class="step-card__number">4</div>
+          <h3 class="step-card__title">A Disfrutar</h3>
+          <p class="step-card__text">En menos de 5 minutos ya estás editando como PRO.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== TESTIMONIALS & COMMUNITY ===== -->
   <section class="section testimonials" id="testimonios">
     <div class="container">
@@ -231,7 +275,7 @@
           </div>
         </div>
 
-        <!-- Right: Facebook Page Plugin -->
+        <!-- Right: Facebook Page Plugin and Dynamic Counter -->
         <div class="testimonials__fb-plugin reveal" style="transition-delay: 0.3s;">
           <div class="fb-plugin-wrapper glass-card">
             <h3 class="fb-plugin-title">Únete a nuestra página oficial 👇</h3>
@@ -246,6 +290,13 @@
                 <a href="https://www.facebook.com/mangelcapcut/">Mangel Store</a>
               </blockquote>
             </div>
+          </div>
+
+          <!-- DYNAMIC COUNTER -->
+          <div class="counter-card glass-card reveal" style="transition-delay: 0.4s;">
+            <div class="counter-card__icon">🚀</div>
+            <div class="counter-card__number" data-target="11000">0</div>
+            <div class="counter-card__label">Seguidores en la comunidad</div>
           </div>
         </div>
       </div>
@@ -384,6 +435,13 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          
+          // Trigger counter animation if it's the counter card
+          if (entry.target.querySelector('.counter-card__number')) {
+            const counter = entry.target.querySelector('.counter-card__number');
+            animateCounter(counter);
+          }
+          
           revealObserver.unobserve(entry.target);
         }
       });
@@ -392,6 +450,28 @@
     document.querySelectorAll('.reveal').forEach(el => {
       revealObserver.observe(el);
     });
+
+    // ============================
+    // DYNAMIC COUNTER ANIMATION
+    // ============================
+    function animateCounter(counter) {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // ms
+      const increment = target / (duration / 16); // 60fps
+      
+      let current = 0;
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          counter.innerText = Math.ceil(current).toLocaleString('es-CO');
+          requestAnimationFrame(updateCounter);
+        } else {
+          counter.innerText = target.toLocaleString('es-CO');
+        }
+      };
+      
+      updateCounter();
+    }
 
     // ============================
     // SMOOTH SCROLL for anchor links

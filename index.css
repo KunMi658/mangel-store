@@ -992,24 +992,62 @@ body::after {
 
 @media (max-width: 480px) {
   .hero {
-    padding-top: 4rem;
+    padding-top: 5rem;
+  }
+  
+  .hero__content {
+    gap: 1.5rem;
   }
 
   .hero__title {
-    font-size: clamp(2rem, 8vw, 2.6rem);
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
   }
 
   .hero__price-amount {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero__cta .btn {
     width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .hero__product-card {
+    padding: 1.2rem;
+    max-width: 100%;
   }
 
   .product-card__icon {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .product-card__name {
+    font-size: 1.1rem;
+  }
+  
+  .product-card__features li {
+    font-size: 0.8rem;
+    padding: 8px 0;
+  }
+
+  .product-card__price-value {
+    font-size: 1.6rem;
+  }
+  
+  .section__title {
+    font-size: 1.8rem;
+  }
+  
+  .review-card {
+    padding: 1.2rem;
   }
 }
 
@@ -1164,6 +1202,95 @@ body::after {
   font-size: var(--fs-h3);
   margin-bottom: 1.5rem;
   font-weight: 600;
+}
+
+/* ============================================================
+   DYNAMIC COUNTER & SECTIONS
+   ============================================================ */
+
+.counter-card {
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(0, 229, 204, 0.05), rgba(123, 47, 255, 0.05));
+  border: 1px solid var(--border-glow-teal);
+}
+
+.counter-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.counter-card__number {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.counter-card__number::after {
+  content: '+';
+  font-size: 0.6em;
+  -webkit-text-fill-color: var(--accent-teal);
+}
+
+.counter-card__label {
+  font-size: var(--fs-h3);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Steps Grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.step-card {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.step-card__number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-void);
+  border: 2px solid var(--accent-teal);
+  color: var(--accent-teal);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 229, 204, 0.2);
+}
+
+.step-card__title {
+  font-size: var(--fs-h3);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.step-card__text {
+  color: var(--text-secondary);
+  font-size: var(--fs-body);
 }
 
 @media (max-width: 900px) {
