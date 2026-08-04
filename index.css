@@ -880,6 +880,7 @@ body::after {
   position: absolute;
   border-radius: 50%;
   animation: particleDrift linear infinite;
+  will-change: transform;
 }
 
 @keyframes particleDrift {
@@ -1110,13 +1111,14 @@ body::after {
 
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translate3d(0, 30px, 0);
   transition: opacity 0.8s var(--ease-spatial), transform 0.8s var(--ease-spatial);
+  will-change: transform, opacity;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* ============================================================
