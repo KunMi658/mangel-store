@@ -102,6 +102,12 @@
           <span class="hero__price-note">Membresía renovable · Pago único</span>
         </div>
 
+        <!-- Live Counter -->
+        <div class="hero__live-counter reveal">
+          <span class="live-pulse"></span>
+          <span class="counter-card__number" data-target="11000">0</span>+ creadores activos
+        </div>
+
         <!-- Trust Badges -->
         <div class="hero__trust">
           <span class="trust-badge">✅ Legal</span>
@@ -325,22 +331,9 @@
           </div>
         </div>
 
-        <!-- Right: Facebook Page Plugin and Dynamic Counter -->
+        <!-- Right: Dynamic Counter -->
         <div class="testimonials__fb-plugin reveal" style="transition-delay: 0.3s;">
-          <div class="fb-plugin-wrapper glass-card">
-            <h3 class="fb-plugin-title">Únete a nuestra página oficial 👇</h3>
-            <!-- FB SDK Plugin -->
-            <div class="fb-page" 
-                 data-href="https://www.facebook.com/mangelcapcut/" 
-                 data-tabs="" 
-                 data-width="340" 
-                 data-hide-cover="false" 
-                 data-show-facepile="true">
-              <blockquote cite="https://www.facebook.com/mangelcapcut/" class="fb-xfbml-parse-ignore">
-                <a href="https://www.facebook.com/mangelcapcut/">Mangel Store</a>
-              </blockquote>
-            </div>
-          </div>
+
 
           <!-- DYNAMIC COUNTER -->
           <div class="counter-card glass-card reveal" style="transition-delay: 0.4s;">
@@ -507,17 +500,34 @@
     function animateCounter(counter) {
       const target = +counter.getAttribute('data-target');
       const duration = 2000; // ms
-      const increment = target / (duration / 16); // 60fps
+      const increment = target / (duration / 16); // fast initial climb
       
       let current = 0;
+      let hasReachedTarget = false;
+      
       const updateCounter = () => {
-        current += increment;
-        if (current < target) {
-          counter.innerText = Math.ceil(current).toLocaleString('es-CO');
-          requestAnimationFrame(updateCounter);
-        } else {
-          counter.innerText = target.toLocaleString('es-CO');
+        if (!hasReachedTarget) {
+          current += increment;
+          if (current < target) {
+            counter.innerText = Math.ceil(current).toLocaleString('es-CO');
+            requestAnimationFrame(updateCounter);
+          } else {
+            current = target;
+            counter.innerText = current.toLocaleString('es-CO');
+            hasReachedTarget = true;
+            // Start continuous slow ticking
+            setTimeout(slowTick, 2000);
+          }
         }
+      };
+      
+      const slowTick = () => {
+        // Randomly add 1 to 3 followers every few seconds
+        current += Math.floor(Math.random() * 3) + 1;
+        counter.innerText = current.toLocaleString('es-CO');
+        // Next tick between 2 and 6 seconds
+        const nextTickDelay = Math.random() * 4000 + 2000;
+        setTimeout(slowTick, nextTickDelay);
       };
       
       updateCounter();

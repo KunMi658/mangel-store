@@ -582,6 +582,51 @@ body::after {
   color: var(--text-tertiary);
 }
 
+.hero__live-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 2.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  animation: heroSlideIn 1s var(--ease-spatial) both;
+  animation-delay: 0.9s;
+}
+
+.hero__live-counter .counter-card__number {
+  color: var(--accent-teal);
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.live-pulse {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-teal);
+  border-radius: 50%;
+  position: relative;
+}
+
+.live-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+  opacity: 0.5;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
 /* Trust badges row */
 .hero__trust {
   display: flex;
