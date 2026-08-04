@@ -28,8 +28,8 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo" aria-label="MangelStore Home">
-        <!-- Inline SVG logo placeholder — MS monogram -->
-        <div class="nav__logo-img" style="background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple)); display:flex; align-items:center; justify-content:center; font-family: var(--font-heading); font-weight:900; font-size:0.9rem; color:#fff; letter-spacing:-0.05em;">MS</div>
+        <!-- Logo from provided URL -->
+        <img src="https://i.ibb.co/vrdv59m/651909546-25747303941632419-2557870097510574120-n.jpg" alt="MangelStore Logo" class="nav__logo-img" style="object-fit: cover;" />
         <span class="nav__logo-text">Mangel<span>Store</span></span>
       </a>
 
@@ -127,11 +127,9 @@
       <div class="hero__visual">
         <div class="hero__product-card glass-card" id="productCard">
           <div class="product-card__header">
-            <div class="product-card__icon">
-              <!-- CapCut scissors symbol -->
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="#000">
-                <path d="M4.5 8.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm0 18a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-4.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM20 4L7.12 13.35l2.1 1.65L20 4zM7.12 10.65L20 20l-10.78-11z"/>
-              </svg>
+            <div class="product-card__icon" style="background: none; border: none; box-shadow: none;">
+              <!-- CapCut 3D Logo -->
+              <img src="https://i.ibb.co/RkfLhyNz/image-png-202608041417.jpg" alt="CapCut 3D" style="width: 150%; height: 150%; object-fit: contain; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5)); transform: translate(-15%, -15%);" />
             </div>
             <div>
               <div class="product-card__name">CapCut PRO</div>
@@ -193,7 +191,40 @@
         <h2 class="section__title">Todo el poder de <span class="accent-teal">CapCut PRO</span></h2>
         <p class="section__subtitle">Desbloquea las herramientas que usan los creadores top para viralizar sus videos.</p>
       </div>
-      <!-- Additional product details could go here in a grid. Keeping it minimal for Spatial UI. -->
+      
+      <div class="product-showcase reveal">
+        <div class="product-showcase__image-wrapper glass-card">
+          <img src="https://i.ibb.co/dsY7ZGW7/Woman-holding-phone-with-3-D-202608041010.jpg" alt="Creadora usando CapCut PRO" class="product-showcase__image" />
+          <div class="product-showcase__glow"></div>
+        </div>
+        
+        <div class="product-showcase__details">
+          <h3 class="product-showcase__title">Eleva tu contenido al <span class="accent-magenta">siguiente nivel</span></h3>
+          <ul class="product-showcase__list">
+            <li class="glass-card">
+              <div class="icon">✨</div>
+              <div>
+                <strong>Efectos Premium</strong>
+                <p>Accede a todos los filtros y transiciones virales sin restricciones.</p>
+              </div>
+            </li>
+            <li class="glass-card">
+              <div class="icon">🚀</div>
+              <div>
+                <strong>Exportación 4K Pro</strong>
+                <p>Máxima calidad de video para YouTube, TikTok y Reels.</p>
+              </div>
+            </li>
+            <li class="glass-card">
+              <div class="icon">🤖</div>
+              <div>
+                <strong>IA Avanzada</strong>
+                <p>Subtítulos pro, eliminación de fondo mágica y mejora de voz.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -205,26 +236,45 @@
         <p class="section__subtitle">Activa tu cuenta en menos de 5 minutos, sin procesos largos ni complicaciones.</p>
       </div>
 
-      <div class="steps-grid">
-        <div class="step-card glass-card reveal">
-          <div class="step-card__number">1</div>
-          <h3 class="step-card__title">Ves el anuncio</h3>
-          <p class="step-card__text">Descubres nuestra increíble oferta de MangelStore.</p>
+      <div class="how-it-works-container">
+        <!-- Step 1 -->
+        <div class="hiw-step glass-card reveal">
+          <div class="hiw-step__bg-number">1</div>
+          <div class="hiw-step__content">
+            <div class="hiw-step__icon">📱</div>
+            <h3 class="hiw-step__title">Pides tu cuenta</h3>
+            <p class="hiw-step__text">Haces clic en cualquiera de nuestros botones de WhatsApp y nos escribes.</p>
+          </div>
         </div>
-        <div class="step-card glass-card reveal" style="transition-delay: 0.1s;">
-          <div class="step-card__number">2</div>
-          <h3 class="step-card__title">Clic a WhatsApp</h3>
-          <p class="step-card__text">Nos escribes y te atendemos al instante.</p>
+        
+        <!-- Step 2 -->
+        <div class="hiw-step glass-card reveal" style="transition-delay: 0.1s;">
+          <div class="hiw-step__bg-number">2</div>
+          <div class="hiw-step__content">
+            <div class="hiw-step__icon">💳</div>
+            <h3 class="hiw-step__title">Realizas el pago</h3>
+            <p class="hiw-step__text">Te compartimos nuestros métodos de pago seguros. Confirmamos al instante.</p>
+          </div>
         </div>
-        <div class="step-card glass-card reveal" style="transition-delay: 0.2s;">
-          <div class="step-card__number">3</div>
-          <h3 class="step-card__title">Te Conectas</h3>
-          <p class="step-card__text">Realizas el pago y te enviamos tus accesos seguros.</p>
+        
+        <!-- Step 3 -->
+        <div class="hiw-step glass-card reveal" style="transition-delay: 0.2s;">
+          <div class="hiw-step__bg-number">3</div>
+          <div class="hiw-step__content">
+            <div class="hiw-step__icon">🔑</div>
+            <h3 class="hiw-step__title">Recibes accesos</h3>
+            <p class="hiw-step__text">Te enviamos el correo y clave oficial para que inicies sesión en tu app.</p>
+          </div>
         </div>
-        <div class="step-card glass-card reveal" style="transition-delay: 0.3s;">
-          <div class="step-card__number">4</div>
-          <h3 class="step-card__title">A Disfrutar</h3>
-          <p class="step-card__text">En menos de 5 minutos ya estás editando como PRO.</p>
+        
+        <!-- Step 4 -->
+        <div class="hiw-step glass-card reveal" style="transition-delay: 0.3s;">
+          <div class="hiw-step__bg-number">4</div>
+          <div class="hiw-step__content">
+            <div class="hiw-step__icon">🎬</div>
+            <h3 class="hiw-step__title">¡A crear!</h3>
+            <p class="hiw-step__text">Disfruta de todas las funciones PRO desbloqueadas inmediatamente.</p>
+          </div>
         </div>
       </div>
     </div>

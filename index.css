@@ -1251,49 +1251,181 @@ body::after {
   font-weight: 500;
 }
 
-/* Steps Grid */
-.steps-grid {
+/* ============================================================
+   PRODUCT SHOWCASE
+   ============================================================ */
+
+.product-showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
   margin-top: 3rem;
 }
 
-.step-card {
-  padding: 2rem;
-  text-align: center;
+.product-showcase__image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--border-glow-teal);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.product-showcase__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.product-showcase__image-wrapper:hover .product-showcase__image {
+  transform: scale(1.05);
+}
+
+.product-showcase__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 30%, rgba(123, 47, 255, 0.2) 100%);
+  pointer-events: none;
+}
+
+.product-showcase__title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h2);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.product-showcase__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-showcase__list li {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  transition: all 0.3s ease;
+}
+
+.product-showcase__list li:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(0, 229, 204, 0.5);
+  transform: translateX(10px);
+}
+
+.product-showcase__list .icon {
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.product-showcase__list strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.product-showcase__list p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   HOW IT WORKS REDESIGN
+   ============================================================ */
+
+.how-it-works-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
   position: relative;
 }
 
-.step-card__number {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: var(--bg-void);
-  border: 2px solid var(--accent-teal);
-  color: var(--accent-teal);
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 800;
+.hiw-step {
+  position: relative;
+  padding: 2.5rem;
+  border-radius: 20px;
+  overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin: 0 auto 1.5rem;
-  box-shadow: 0 0 20px rgba(0, 229, 204, 0.2);
+  min-height: 250px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-.step-card__title {
-  font-size: var(--fs-h3);
+.hiw-step:hover {
+  transform: translateY(-10px);
+  border-color: rgba(123, 47, 255, 0.5);
+  box-shadow: 0 15px 30px rgba(123, 47, 255, 0.15);
+}
+
+.hiw-step__bg-number {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 10rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.05);
+  z-index: 0;
+  transition: all 0.4s ease;
+}
+
+.hiw-step:hover .hiw-step__bg-number {
+  -webkit-text-stroke: 2px rgba(0, 229, 204, 0.2);
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.hiw-step__content {
+  position: relative;
+  z-index: 1;
+}
+
+.hiw-step__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid var(--border-glass);
+}
+
+.hiw-step__title {
+  font-size: 1.4rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  color: #fff;
 }
 
-.step-card__text {
+.hiw-step__text {
   color: var(--text-secondary);
-  font-size: var(--fs-body);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 900px) {
+  .product-showcase {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
   .testimonials__grid {
     grid-template-columns: 1fr;
   }
