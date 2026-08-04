@@ -20,6 +20,9 @@
   <link rel="preload" as="image" href="https://i.ibb.co/tMXvjW0y/Cap-Cut-website-hero-banner-2-K-202608041103.jpg" />
 </head>
 <body>
+  <!-- Facebook SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0" nonce="fbSDK"></script>
 
   <!-- ===== NAVIGATION ===== -->
   <nav class="nav" id="nav">
@@ -180,6 +183,72 @@
     <div class="hero__scroll">
       <span>Scroll</span>
       <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS & COMMUNITY ===== -->
+  <section class="section testimonials" id="testimonios">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title">Nuestra <span class="accent-teal">Comunidad</span></h2>
+        <p class="section__subtitle">Cientos de creadores ya confían en MangelStore para editar como verdaderos profesionales.</p>
+      </div>
+
+      <div class="testimonials__grid">
+        <!-- Left: Static Reviews -->
+        <div class="testimonials__reviews">
+          <div class="review-card glass-card reveal">
+            <div class="review-card__header">
+              <div class="review-card__avatar">P</div>
+              <div>
+                <div class="review-card__name">Pablo Torres</div>
+                <div class="review-card__rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="review-card__text">"Literalmente me activaron en 3 minutos. La cuenta de CapCut funciona perfecto y ya no tengo que preocuparme por bloqueos. 10/10."</p>
+          </div>
+
+          <div class="review-card glass-card reveal" style="transition-delay: 0.1s;">
+            <div class="review-card__header">
+              <div class="review-card__avatar" style="background: var(--accent-magenta);">M</div>
+              <div>
+                <div class="review-card__name">Mariana Gómez</div>
+                <div class="review-card__rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="review-card__text">"Súper recomendados, ya llevo 3 meses renovando con ellos y cero problemas. Y si hay dudas, por WhatsApp contestan de una."</p>
+          </div>
+
+          <div class="review-card glass-card reveal" style="transition-delay: 0.2s;">
+            <div class="review-card__header">
+              <div class="review-card__avatar" style="background: var(--accent-purple);">D</div>
+              <div>
+                <div class="review-card__name">Daniela Restrepo</div>
+                <div class="review-card__rating">⭐⭐⭐⭐⭐</div>
+              </div>
+            </div>
+            <p class="review-card__text">"Increíble el servicio. Me salvaron para un proyecto de la U que necesitaba exportar con efectos Pro urgentes. Segura y legal."</p>
+          </div>
+        </div>
+
+        <!-- Right: Facebook Page Plugin -->
+        <div class="testimonials__fb-plugin reveal" style="transition-delay: 0.3s;">
+          <div class="fb-plugin-wrapper glass-card">
+            <h3 class="fb-plugin-title">Únete a nuestra página oficial 👇</h3>
+            <!-- FB SDK Plugin -->
+            <div class="fb-page" 
+                 data-href="https://www.facebook.com/mangelcapcut/" 
+                 data-tabs="" 
+                 data-width="340" 
+                 data-hide-cover="false" 
+                 data-show-facepile="true">
+              <blockquote cite="https://www.facebook.com/mangelcapcut/" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/mangelcapcut/">Mangel Store</a>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
