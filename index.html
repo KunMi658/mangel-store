@@ -479,10 +479,9 @@
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           
-          // Trigger counter animation if it's the counter card
+          // Trigger global counter animation if it's a counter card
           if (entry.target.querySelector('.counter-card__number')) {
-            const counter = entry.target.querySelector('.counter-card__number');
-            animateCounter(counter);
+            startGlobalCounter();
           }
           
           revealObserver.unobserve(entry.target);
@@ -495,37 +494,43 @@
     });
 
     // ============================
-    // DYNAMIC COUNTER ANIMATION
+    // DYNAMIC COUNTER ANIMATION (SYNCED)
     // ============================
-    function animateCounter(counter) {
-      const target = +counter.getAttribute('data-target');
+    const allCounters = document.querySelectorAll('.counter-card__number');
+    let currentGlobal = 0;
+    let hasReachedTargetGlobal = false;
+    let isAnimatingGlobal = false;
+
+    function startGlobalCounter() {
+      if (isAnimatingGlobal) return;
+      isAnimatingGlobal = true;
+
+      // Assuming all counters have the same target for simplicity (11000)
+      const target = 11000;
       const duration = 2000; // ms
-      const increment = target / (duration / 16); // fast initial climb
-      
-      let current = 0;
-      let hasReachedTarget = false;
+      const increment = target / (duration / 16); 
       
       const updateCounter = () => {
-        if (!hasReachedTarget) {
-          current += increment;
-          if (current < target) {
-            counter.innerText = Math.ceil(current).toLocaleString('es-CO');
+        if (!hasReachedTargetGlobal) {
+          currentGlobal += increment;
+          if (currentGlobal < target) {
+            const formatted = Math.ceil(currentGlobal).toLocaleString('es-CO');
+            allCounters.forEach(c => c.innerText = formatted);
             requestAnimationFrame(updateCounter);
           } else {
-            current = target;
-            counter.innerText = current.toLocaleString('es-CO');
-            hasReachedTarget = true;
-            // Start continuous slow ticking
+            currentGlobal = target;
+            const formatted = currentGlobal.toLocaleString('es-CO');
+            allCounters.forEach(c => c.innerText = formatted);
+            hasReachedTargetGlobal = true;
             setTimeout(slowTick, 2000);
           }
         }
       };
       
       const slowTick = () => {
-        // Randomly add 1 to 3 followers every few seconds
-        current += Math.floor(Math.random() * 3) + 1;
-        counter.innerText = current.toLocaleString('es-CO');
-        // Next tick between 2 and 6 seconds
+        currentGlobal += Math.floor(Math.random() * 3) + 1;
+        const formatted = currentGlobal.toLocaleString('es-CO');
+        allCounters.forEach(c => c.innerText = formatted);
         const nextTickDelay = Math.random() * 4000 + 2000;
         setTimeout(slowTick, nextTickDelay);
       };
