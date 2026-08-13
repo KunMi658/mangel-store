@@ -1502,19 +1502,19 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 10px 20px;
-  background: rgba(0, 132, 255, 0.08);
-  border-bottom: 1px solid rgba(0, 132, 255, 0.15);
-  font-size: 0.82rem;
-  color: var(--text-secondary);
+  gap: 6px;
+  padding: 6px 16px;
+  background: rgba(0, 132, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 132, 255, 0.08);
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
   text-align: center;
   position: relative;
   z-index: 999;
 }
 
 .meta-trust-banner strong {
-  color: #0084FF;
+  color: rgba(0, 132, 255, 0.7);
 }
 
 /* ============================================================
@@ -1760,9 +1760,9 @@ body::after {
 
 .payment-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .payment-card {
@@ -1814,6 +1814,49 @@ body::after {
   letter-spacing: 0.08em;
 }
 
+.payment-card__account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 229, 204, 0.06);
+  border: 1px solid rgba(0, 229, 204, 0.15);
+  border-radius: 12px;
+  padding: 12px 18px;
+  width: 100%;
+  justify-content: center;
+}
+
+.payment-card__account-number {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-teal);
+  letter-spacing: 0.04em;
+}
+
+.payment-card__copy {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.payment-card__copy:hover {
+  background: rgba(0, 229, 204, 0.15);
+  color: var(--accent-teal);
+}
+
+.payment-card__instruction {
+  color: var(--text-tertiary);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .payment-card__number {
   color: var(--text-tertiary);
   font-size: 0.85rem;
@@ -1825,6 +1868,44 @@ body::after {
   text-align: center;
   margin-top: auto;
   font-size: 0.85rem;
+}
+
+/* Payment Steps Flow */
+.payment-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.payment-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.payment-step__num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 229, 204, 0.1);
+  border: 1px solid rgba(0, 229, 204, 0.3);
+  color: var(--accent-teal);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.payment-step__arrow {
+  color: var(--text-tertiary);
+  font-size: 1.2rem;
 }
 
 /* ============================================================
@@ -1893,13 +1974,27 @@ body::after {
   }
 
   .meta-trust-banner {
-    font-size: 0.72rem;
-    padding: 8px 12px;
+    font-size: 0.65rem;
+    padding: 5px 10px;
   }
 
   .meta-footer__trust {
     flex-direction: column;
     padding: 1rem;
     font-size: 0.82rem;
+  }
+
+  .payment-steps {
+    gap: 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .payment-step__arrow {
+    font-size: 0.9rem;
+  }
+
+  .payment-card__account {
+    flex-direction: column;
+    gap: 8px;
   }
 }

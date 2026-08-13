@@ -57,8 +57,8 @@
 
   <!-- Meta Trust Banner -->
   <div class="meta-trust-banner">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #0084FF;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.7 14.5L6 12.2l1.4-1.4 2.9 2.9 6.3-6.3 1.4 1.4-7.7 7.7z"/></svg>
-    <span>Esta empresa usa un servicio seguro de <strong>META</strong> para administrar las compras y los chats.</span>
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="color: #0084FF;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-1.7 14.5L6 12.2l1.4-1.4 2.9 2.9 6.3-6.3 1.4 1.4-7.7 7.7z"/></svg>
+    <span>Servicio seguro verificado por <strong>META</strong></span>
   </div>
 
   <!-- ===== HERO SECTION ===== -->
@@ -334,40 +334,57 @@
     <div class="container">
       <div class="section__header reveal">
         <h2 class="section__title">Métodos de <span class="accent-teal">Pago</span></h2>
-        <p class="section__subtitle">Paga de forma segura. Al confirmar, serás redirigido a WhatsApp para enviar tu comprobante.</p>
+        <p class="section__subtitle">Elige tu método, realiza la transferencia y envíanos el comprobante por WhatsApp.</p>
+      </div>
+
+      <!-- Payment Steps -->
+      <div class="payment-steps reveal">
+        <div class="payment-step">
+          <span class="payment-step__num">1</span>
+          <span>Elige tu producto</span>
+        </div>
+        <div class="payment-step__arrow">→</div>
+        <div class="payment-step">
+          <span class="payment-step__num">2</span>
+          <span>Transfiere a la cuenta</span>
+        </div>
+        <div class="payment-step__arrow">→</div>
+        <div class="payment-step">
+          <span class="payment-step__num">3</span>
+          <span>Envía comprobante</span>
+        </div>
       </div>
 
       <div class="payment-grid">
+        <!-- Bancolombia -->
         <div class="payment-card glass-card reveal">
           <div class="payment-card__icon">🏦</div>
           <h3 class="payment-card__title">Bancolombia</h3>
-          <p class="payment-card__detail">Ahorros</p>
-          <p class="payment-card__number">Número de cuenta proporcionado por WhatsApp</p>
-          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20por%20transferencia%20Bancolombia%20💰%20Aquí%20envío%20mi%20comprobante:" 
+          <p class="payment-card__detail">Cuenta de Ahorros</p>
+          <div class="payment-card__account">
+            <span class="payment-card__account-number" id="bancolombia-num">91283326450</span>
+            <button class="payment-card__copy" onclick="navigator.clipboard.writeText('91283326450'); this.textContent='✅ Copiado'; setTimeout(()=>this.textContent='📋 Copiar', 2000);">📋 Copiar</button>
+          </div>
+          <p class="payment-card__instruction">Transfiere el monto exacto del producto que deseas y luego envíanos el comprobante:</p>
+          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20pagar%20por%20Bancolombia%20(Ahorros%2091283326450).%20Aquí%20envío%20mi%20comprobante%20📸" 
              class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Ya pagué · Enviar comprobante 📋
+            Enviar comprobante por WhatsApp 📸
           </a>
         </div>
 
-        <div class="payment-card glass-card reveal" style="transition-delay: 0.1s;">
-          <div class="payment-card__icon">📲</div>
-          <h3 class="payment-card__title">Nequi</h3>
-          <p class="payment-card__detail">Transferencia rápida</p>
-          <p class="payment-card__number">Número proporcionado por WhatsApp</p>
-          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20por%20Nequi%20💰%20Aquí%20envío%20mi%20comprobante:" 
-             class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Ya pagué · Enviar comprobante 📋
-          </a>
-        </div>
-
-        <div class="payment-card glass-card reveal" style="transition-delay: 0.2s;">
+        <!-- Llave Breb -->
+        <div class="payment-card glass-card reveal" style="transition-delay: 0.15s;">
           <div class="payment-card__icon">🔑</div>
-          <h3 class="payment-card__title">Daviplata</h3>
-          <p class="payment-card__detail">Llave / Transferencia</p>
-          <p class="payment-card__number">Número proporcionado por WhatsApp</p>
-          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20realizar%20mi%20pago%20por%20Daviplata%20💰%20Aquí%20envío%20mi%20comprobante:" 
+          <h3 class="payment-card__title">Llave Breb</h3>
+          <p class="payment-card__detail">Nequi · Daviplata · Bancolombia</p>
+          <div class="payment-card__account">
+            <span class="payment-card__account-number" id="llave-num">@miguelq055602</span>
+            <button class="payment-card__copy" onclick="navigator.clipboard.writeText('@miguelq055602'); this.textContent='✅ Copiado'; setTimeout(()=>this.textContent='📋 Copiar', 2000);">📋 Copiar</button>
+          </div>
+          <p class="payment-card__instruction">Busca esta llave en tu app bancaria (Nequi, Daviplata, Bancolombia), transfiere y envía comprobante:</p>
+          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20pagar%20por%20Llave%20Breb%20(@miguelq055602).%20Aquí%20envío%20mi%20comprobante%20📸" 
              class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Ya pagué · Enviar comprobante 📋
+            Enviar comprobante por WhatsApp 📸
           </a>
         </div>
       </div>
