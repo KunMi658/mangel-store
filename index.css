@@ -1857,10 +1857,50 @@ body::after {
   line-height: 1.5;
 }
 
-.payment-card__number {
-  color: var(--text-tertiary);
-  font-size: 0.85rem;
-  font-style: italic;
+.payment-card__guide {
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px 20px;
+}
+
+.payment-card__guide-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.payment-card__guide ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.payment-card__guide li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+
+.payment-card__guide li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--accent-teal);
+  font-weight: 700;
+}
+
+.payment-card__guide li strong {
+  color: var(--text-primary);
 }
 
 .payment-card__cta {

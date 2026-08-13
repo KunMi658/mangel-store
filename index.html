@@ -334,41 +334,29 @@
     <div class="container">
       <div class="section__header reveal">
         <h2 class="section__title">Métodos de <span class="accent-teal">Pago</span></h2>
-        <p class="section__subtitle">Elige tu método, realiza la transferencia y envíanos el comprobante por WhatsApp.</p>
-      </div>
-
-      <!-- Payment Steps -->
-      <div class="payment-steps reveal">
-        <div class="payment-step">
-          <span class="payment-step__num">1</span>
-          <span>Elige tu producto</span>
-        </div>
-        <div class="payment-step__arrow">→</div>
-        <div class="payment-step">
-          <span class="payment-step__num">2</span>
-          <span>Transfiere a la cuenta</span>
-        </div>
-        <div class="payment-step__arrow">→</div>
-        <div class="payment-step">
-          <span class="payment-step__num">3</span>
-          <span>Envía comprobante</span>
-        </div>
+        <p class="section__subtitle">Aceptamos dos métodos de pago seguros. Escríbenos y te damos toda la información.</p>
       </div>
 
       <div class="payment-grid">
         <!-- Bancolombia -->
         <div class="payment-card glass-card reveal">
           <div class="payment-card__icon">🏦</div>
-          <h3 class="payment-card__title">Bancolombia</h3>
-          <p class="payment-card__detail">Cuenta de Ahorros</p>
+          <h3 class="payment-card__title">Ahorros Bancolombia</h3>
+          <p class="payment-card__detail">Transferencia directa</p>
           <div class="payment-card__account">
             <span class="payment-card__account-number" id="bancolombia-num">91283326450</span>
             <button class="payment-card__copy" onclick="navigator.clipboard.writeText('91283326450'); this.textContent='✅ Copiado'; setTimeout(()=>this.textContent='📋 Copiar', 2000);">📋 Copiar</button>
           </div>
-          <p class="payment-card__instruction">Transfiere el monto exacto del producto que deseas y luego envíanos el comprobante:</p>
-          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20pagar%20por%20Bancolombia%20(Ahorros%2091283326450).%20Aquí%20envío%20mi%20comprobante%20📸" 
+          <div class="payment-card__guide">
+            <p class="payment-card__guide-title">¿Cómo pagar?</p>
+            <ul>
+              <li>Desde la <strong>App Bancolombia</strong>: Transferir a cuenta de ahorros</li>
+              <li>Desde <strong>Nequi</strong>: Enviar → A cuenta bancaria → Bancolombia</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/573233818212?text=Hola%20ya%20tengo%20clara%20toda%20la%20informaci%C3%B3n%2C%20deseo%20pagar%20por%20Bancolombia%2C%20reg%C3%A1lame%20los%20datos%20de%20pago%20por%20favor." 
              class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Enviar comprobante por WhatsApp 📸
+            Si te interesa da click aquí y adquiérelo ahora 🚀
           </a>
         </div>
 
@@ -376,15 +364,23 @@
         <div class="payment-card glass-card reveal" style="transition-delay: 0.15s;">
           <div class="payment-card__icon">🔑</div>
           <h3 class="payment-card__title">Llave Breb</h3>
-          <p class="payment-card__detail">Nequi · Daviplata · Bancolombia</p>
+          <p class="payment-card__detail">Funciona desde cualquier banco</p>
           <div class="payment-card__account">
             <span class="payment-card__account-number" id="llave-num">@miguelq055602</span>
             <button class="payment-card__copy" onclick="navigator.clipboard.writeText('@miguelq055602'); this.textContent='✅ Copiado'; setTimeout(()=>this.textContent='📋 Copiar', 2000);">📋 Copiar</button>
           </div>
-          <p class="payment-card__instruction">Busca esta llave en tu app bancaria (Nequi, Daviplata, Bancolombia), transfiere y envía comprobante:</p>
-          <a href="https://wa.me/573233818212?text=Hola!%20Acabo%20de%20pagar%20por%20Llave%20Breb%20(@miguelq055602).%20Aquí%20envío%20mi%20comprobante%20📸" 
+          <div class="payment-card__guide">
+            <p class="payment-card__guide-title">¿Cómo pagar?</p>
+            <ul>
+              <li>Abre tu app bancaria (Bancolombia, Nequi, Daviplata, u otra)</li>
+              <li>Busca la opción <strong>"Pagar con llave"</strong> o <strong>"Transferir por alias"</strong></li>
+              <li>Ingresa la llave: <strong>@miguelq055602</strong></li>
+              <li>Ingresa el monto del producto y confirma</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/573233818212?text=Hola%20ya%20tengo%20clara%20toda%20la%20informaci%C3%B3n%2C%20deseo%20pagar%20por%20Llave%20Breb%2C%20reg%C3%A1lame%20los%20datos%20de%20pago%20por%20favor." 
              class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Enviar comprobante por WhatsApp 📸
+            Si te interesa da click aquí y adquiérelo ahora 🚀
           </a>
         </div>
       </div>
