@@ -18,6 +18,24 @@
 
   <!-- Preload hero image for performance -->
   <link rel="preload" as="image" href="https://i.ibb.co/tMXvjW0y/Cap-Cut-website-hero-banner-2-K-202608041103.jpg" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2063758220891810');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2063758220891810&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <!-- Facebook SDK -->
@@ -615,6 +633,46 @@
         }
       });
     });
+
+    // ============================
+    // META PIXEL EVENT TRACKING
+    // ============================
+
+    // Track WhatsApp CTA clicks as "Lead" (interest in product)
+    const whatsappLinks = document.querySelectorAll(
+      '#hero-whatsapp-cta, #nav-cta, #whatsapp-float, #capcut-cta, #googleai-cta'
+    );
+    whatsappLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        if (typeof fbq !== 'undefined') {
+          // Identify which product they clicked
+          const isGoogleAI = this.id === 'googleai-cta';
+          const productName = isGoogleAI ? 'Google AI PRO' : 'CapCut PRO';
+          const price = isGoogleAI ? 50000 : 25000;
+
+          fbq('track', 'Lead', {
+            content_name: productName,
+            content_category: 'Digital Products',
+            value: price,
+            currency: 'COP'
+          });
+        }
+      });
+    });
+
+    // Track payment button clicks as "InitiateCheckout"
+    const paymentLinks = document.querySelectorAll('.payment-card__cta');
+    paymentLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        if (typeof fbq !== 'undefined') {
+          fbq('track', 'InitiateCheckout', {
+            content_category: 'Digital Products',
+            currency: 'COP'
+          });
+        }
+      });
+    });
+
   </script>
 
 </body>
