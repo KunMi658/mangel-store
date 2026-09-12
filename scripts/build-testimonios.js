@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const TESTIMONIOS_DIR = path.join(__dirname, '../testimonios');
-const INDEX_HTML = path.join(__dirname, '../index.html');
+const TESTIMONIOS_DIR = path.join(__dirname, '../public/testimonios');
+const INDEX_HTML = path.join(__dirname, '../public/index.html');
 
 function buildTestimonios() {
   console.log('Iniciando build de testimonios...');

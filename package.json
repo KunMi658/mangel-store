@@ -1,11 +1,12 @@
 {
   "name": "mangel-store",
-  "version": "1.0.0",
-  "description": "Rediseño MangelStore Landing Page",
+  "private": true,
   "scripts": {
-    "build:testimonios": "node scripts/build-testimonios.js",
-    "build": "echo 'Build successful'"
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev",
+    "build:testimonios": "node scripts/build-testimonios.js"
   },
-  "author": "MangelStore",
-  "license": "ISC"
+  "devDependencies": {
+    "wrangler": "^4.131.1"
+  }
 }
