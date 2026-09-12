@@ -769,25 +769,20 @@ img {
   align-items: center;
 }
 
-.founder-video-card {
+.founder-video {
   width: 100%;
   max-width: 360px;
   aspect-ratio: 9 / 16;
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  border: 1px solid var(--border-neutral);
-  background: #000000;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
-  position: relative;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: #000;
 }
 
-.founder-video-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+@media (max-width: 768px) {
+  .founder-video {
+    max-width: 100%;
+  }
 }
 
 .founder-video-caption {

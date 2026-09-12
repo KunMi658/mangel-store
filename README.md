@@ -21,7 +21,8 @@ Está optimizado para transmitir máxima autoridad, confianza y conversión inme
    - **Google AI PRO:** Garantía completa durante tus 18 meses.
    - **Canva PRO:** Garantía completa durante 1 año.
 5. **Video Vertical (9:16) y Sección Fundador:**
-   - Video vertical optimizado en aspect-ratio 9:16 con parámetros anti-cola (`queue-enable=false&endscreen-enable=false&sharing-enable=false&ui-start-screen-info=false`).
+   - Video vertical HTML5 nativo en aspect-ratio 9:16 hosteado en Cloudinary.
+   - Loop infinito con reproducción en mute (`autoplay muted loop playsinline`). Cero dependencias de reproductores externos y cero saltos a videos no deseados.
    - Ubicada estratégicamente **antes** de los testimonios.
    - En desktop: 2 columnas con espacio generoso (video izquierda, identidad y pilares derecha).
    - En móvil: apilado con el **video primero**, seguido de la identidad y cita de Miguel Q.
@@ -35,6 +36,19 @@ El proyecto está configurado para **Cloudflare Pages** usando un *layout canón
 - Toda la página pública vive dentro de la carpeta `/public`.
 - `wrangler.jsonc` en la raíz apunta al directorio `./public`.
 - Cualquier cambio en la rama `master` dispara el despliegue automático en segundos.
+
+---
+
+## 🎥 Cómo actualizar el video del fundador
+- El video está hosteado en **Cloudinary**.
+- URL actual: `https://res.cloudinary.com/zgqfedz5/video/upload/v1789221703/MI_MODEL.mp4`
+- Para cambiar el video: reemplazar la URL en el `<source>` del elemento `<video class="founder-video">` en `public/index.html`.
+- Atributos obligatorios:
+  - `autoplay`: inicia la reproducción al cargar.
+  - `muted`: indispensable para que los navegadores móviles y desktop permitan autoplay sin requerir clic.
+  - `loop`: garantiza reproducción continua en bucle infinito.
+  - `playsinline`: evita que iOS Safari / Android fuercen modo pantalla completa.
+  - `preload="metadata"`: carga ligera y optimizada de metadatos de video.
 
 ---
 
@@ -53,10 +67,8 @@ El carrusel cuenta con un comportamiento gobernado:
 
 ---
 
-## 🛡️ Estándares de Código y Ruido Conocido
-
-### Ruido Conocido de Terceros (Dailymotion)
-Los errores o warnings en consola relacionados con `dmp.photon`, `about:blank sandbox`, o `cm.adform.net` son ruido interno originado por el iframe del reproductor embebido de Dailymotion. No deben tocarse, no provienen de la lógica de MangelStore y no afectan la funcionalidad ni conversión de la landing.
+## 🛡️ Estándares de Código y Validación
 
 ### Regla Permanente de Validación de Scripts
 Todo cambio o edición futura a bloques `<script>` inline en `public/index.html` debe validarse obligatoriamente extrayendo el código y ejecutando `node --check` antes de realizar commit.
+
