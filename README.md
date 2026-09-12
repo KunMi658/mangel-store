@@ -28,3 +28,11 @@ He creado un sistema híbrido escalable para que agregues nuevos testimonios fá
 - **CLS:** Los contenedores de video (Dailymotion) y testimonios tienen el ratio fijo calculado por CSS.
 - **Micro-copy de urgencia:** Agregado el badge de `⚡ Activación en menos de 5 min` a todas las tarjetas de producto.
 - **Data Estructurada (JSON-LD):** Los productos de CapCut, Canva, Google AI, y el acordeón de FAQ están inyectados en la cabecera del sitio para que Google entienda la tienda perfectamente.
+
+## 🛡️ Estándares de Código y Ruido Conocido
+
+### Ruido Conocido de Terceros (Dailymotion)
+Los errores o warnings en consola relacionados con `dmp.photon`, `about:blank sandbox`, o `cm.adform.net` son ruido interno originado por el iframe del reproductor embebido de Dailymotion. No deben tocarse, no provienen de la lógica de MangelStore y no afectan la funcionalidad ni conversión de la landing.
+
+### Regla Permanente de Validación de Scripts
+Todo cambio o edición futura a bloques `<script>` inline en `public/index.html` debe validarse obligatoriamente extrayendo el código y ejecutando `node --check` antes de realizar commit.

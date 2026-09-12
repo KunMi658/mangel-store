@@ -1106,19 +1106,24 @@ body::after {
 }
 
 /* ============================================================
-   PAGE REVEAL ANIMATION
+   PAGE REVEAL ANIMATION (Fail-Safe)
    ============================================================ */
 
 .reveal {
-  opacity: 0;
-  transform: translate3d(0, 30px, 0);
+  opacity: 1;
+  transform: none;
   transition: opacity 0.8s var(--ease-spatial), transform 0.8s var(--ease-spatial);
   will-change: transform, opacity;
 }
 
-.reveal.visible {
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+html.js .reveal.visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
 /* ============================================================

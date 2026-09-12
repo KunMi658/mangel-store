@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <!-- Deploy test: 2026-09-11 22:12 -->
-<html lang="es" dir="ltr">
+<html class="no-js" lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8" />
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MangelStore — Tu tienda digital de confianza. CapCut PRO y Google AI PRO. Cuentas legales, verificadas y sin caídas. Activación inmediata." />
   <meta name="theme-color" content="#04030A" />
@@ -507,8 +509,7 @@
               <iframe 
                 src="https://www.dailymotion.com/embed/video/xb6o5na?autoplay=1&mute=1&playsinline=1"
                 frameborder="0" 
-                allow="autoplay; fullscreen" 
-                allowfullscreen
+                allow="autoplay; fullscreen; picture-in-picture" 
                 loading="lazy"
                 title="Video testimonio MangelStore"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
@@ -814,27 +815,58 @@
     createParticles();
 
     // ============================
-    // SCROLL REVEAL (Intersection Observer)
+    // SCROLL REVEAL (Intersection Observer + Fail-Safe)
     // ============================
 
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          
-          // Trigger global counter animation if it's a counter card
-          if (entry.target.querySelector('.counter-card__number')) {
-            startGlobalCounter();
-          }
-          
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    const revealElements = document.querySelectorAll('.reveal');
 
-    document.querySelectorAll('.reveal').forEach(el => {
-      revealObserver.observe(el);
-    });
+    function revealAllFallback() {
+      revealElements.forEach(el => {
+        el.classList.add('visible');
+      });
+    }
+
+    try {
+      if (!('IntersectionObserver' in window)) {
+        revealAllFallback();
+      } else {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              
+              // Trigger global counter animation if it's a counter card
+              if (entry.target.querySelector('.counter-card__number')) {
+                startGlobalCounter();
+              }
+              
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => {
+          // Al cargar, .visible inmediato para lo que ya está en viewport
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom >= 0) {
+            el.classList.add('visible');
+            if (el.querySelector('.counter-card__number')) {
+              startGlobalCounter();
+            }
+          } else {
+            revealObserver.observe(el);
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('Scroll reveal fallback triggered:', e);
+      revealAllFallback();
+    }
+
+    // Red de seguridad: setTimeout 2500ms → .visible a todo pendiente
+    setTimeout(() => {
+      revealAllFallback();
+    }, 2500);
 
     // ============================
     // DYNAMIC COUNTER ANIMATION (SYNCED)
@@ -931,6 +963,7 @@
             currency: 'COP'
           });
         }
+      });
     });
 
     // ============================
