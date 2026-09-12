@@ -2038,3 +2038,326 @@ body::after {
     gap: 8px;
   }
 }
+
+/* ============================================================
+   FASE 1: MOBILE FIRST & WHATSAPP CTAs
+   ============================================================ */
+
+/* Mobile-first Tap Targets & Padding */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+  }
+  
+  .nav__link {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* WhatsApp Floating Button (Sticky Bottom) */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-float svg {
+  width: 35px;
+  height: 35px;
+  fill: currentColor;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+@keyframes whatsappPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* CapCut Discount Styles */
+.product-3d-card__amount--old {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+.product-3d-card__badge--discount {
+  background: linear-gradient(135deg, #FF4500, #FF8C00);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+}
+
+/* ============================================================
+   FASE 2: HERO & COMMUNITY ENHANCEMENTS
+   ============================================================ */
+
+/* Hero Animations Enhancements */
+.hero__title {
+  animation: heroSlideIn 0.8s var(--ease-spatial) both;
+  animation-delay: 0.3s;
+}
+
+.hero__subtitle {
+  animation: heroSlideIn 0.8s var(--ease-spatial) both;
+  animation-delay: 0.45s;
+}
+
+.hero__cta {
+  animation: heroSlideIn 0.8s var(--ease-spatial) both;
+  animation-delay: 0.6s;
+}
+
+/* Floating effect for product badges (price pills) */
+.hero__price-pill {
+  animation: floatSlightly 4s ease-in-out infinite;
+}
+.hero__price-pill--ai {
+  animation-delay: 1s;
+}
+
+@keyframes floatSlightly {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Shimmer effect for main CTA */
+.hero__cta .btn--whatsapp {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__cta .btn--whatsapp::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  animation: shimmerCTA 3s infinite;
+}
+
+@keyframes shimmerCTA {
+  0% { left: -100%; }
+  30% { left: 200%; }
+  100% { left: 200%; }
+}
+
+/* Pulse animation en ícono de WhatsApp */
+.hero__cta .btn--whatsapp svg {
+  animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+}
+
+/* Seller Profile & Marquee */
+.seller-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 30px;
+  padding: 30px;
+  border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .seller-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.seller-photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-teal);
+  box-shadow: 0 8px 24px rgba(0, 229, 204, 0.2);
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-spatial);
+}
+
+.seller-section:hover .seller-photo {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.seller-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   FASE 3: FAQ & GUARANTEE
+   ============================================================ */
+
+/* Guarantee Badge */
+.guarantee-badge {
+  background: rgba(46, 125, 50, 0.1);
+  border: 1px solid rgba(46, 125, 50, 0.2);
+  color: #a5d6a7;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding-bottom: 4rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s var(--ease-spatial);
+}
+
+.faq-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: var(--accent-teal);
+  transition: transform 0.3s var(--ease-spatial);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 20px 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-answer[hidden] {
+  display: none;
+}
+
+.seller-title {
+  color: var(--accent-teal);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.seller-message {
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 30px 0;
+  background: rgba(255,255,255,0.015);
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  margin-top: 4rem;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track img {
+  height: 250px;
+  margin: 0 15px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.marquee-track img:hover {
+  transform: scale(1.05);
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

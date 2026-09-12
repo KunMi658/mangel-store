@@ -1,0 +1,10 @@
+{
+  "name": "mangel-store",
+  "version": "1.0.0",
+  "description": "Rediseño MangelStore Landing Page",
+  "scripts": {
+    "build:testimonios": "node scripts/build-testimonios.js"
+  },
+  "author": "MangelStore",
+  "license": "ISC"
+}

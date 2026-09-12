@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="index.css" />
 
   <!-- Preload hero image for performance -->
-  <link rel="preload" as="image" href="https://i.ibb.co/tMXvjW0y/Cap-Cut-website-hero-banner-2-K-202608041103.jpg" />
+  <link rel="preload" as="image" href="https://i.ibb.co/twdzXY4p/Website-hero-banner-creation-20260910230539.jpg" fetchpriority="high" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -36,6 +36,120 @@
   src="https://www.facebook.com/tr?id=2063758220891810&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mangelstore.shop/#organization",
+        "name": "MangelStore",
+        "url": "https://mangelstore.shop/",
+        "logo": "https://i.ibb.co/vrdv59m/651909546-25747303941632419-2557870097510574120-n.jpg",
+        "description": "Tu tienda digital de confianza para cuentas PRO."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Es legal comprar cuentas PRO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, todas nuestras cuentas son 100% legales y verificadas. Trabajamos con licencias oficiales y cuentas compartidas legítimas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa si mi cuenta deja de funcionar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tienes garantía total de 28 días. Si ocurre algún problema con tu cuenta, te la reemplazamos inmediatamente y sin costo adicional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tarda la activación?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La activación es casi instantánea. Una vez confirmado tu pago vía WhatsApp, te entregamos los accesos en menos de 10 minutos durante nuestro horario de atención."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Ofrecen garantía?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Claro que sí. Ofrecemos soporte premium y garantía durante el periodo adquirido (ej. 28 días para la mayoría de los planes mensuales)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo renuevo mi cuenta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Te enviaremos un recordatorio unos días antes de que caduque tu suscripción. Podrás renovarla rápidamente realizando un nuevo pago a través de nuestro WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo usarlo en varios dispositivos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Por seguridad de la cuenta, recomendamos su uso en 1 dispositivo principal para evitar bloqueos por inicios de sesión sospechosos. Consulta detalles específicos por aplicación."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "name": "CapCut PRO",
+        "image": "https://i.ibb.co/twdzXY4p/Website-hero-banner-creation-20260910230539.jpg",
+        "description": "Todas las funciones premium desbloqueadas. Efectos, filtros, transiciones, exportación 4K, IA avanzada.",
+        "brand": { "@type": "Brand", "name": "CapCut" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://mangelstore.shop/#producto",
+          "priceCurrency": "COP",
+          "price": "20000",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://mangelstore.shop/#organization" }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Google AI PRO",
+        "description": "Acceso completo a todas las herramientas de inteligencia artificial de Google con tu propio correo.",
+        "brand": { "@type": "Brand", "name": "Google" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://mangelstore.shop/#producto",
+          "priceCurrency": "COP",
+          "price": "50000",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://mangelstore.shop/#organization" }
+        }
+      },
+      {
+        "@type": "Product",
+        "name": "Canva PRO",
+        "image": "https://i.ibb.co/jZM7ymMY/Canva-Pro-subscription-advertise-20260910084534.jpg",
+        "description": "Lleva tus diseños al siguiente nivel con todas las herramientas premium desbloqueadas.",
+        "brand": { "@type": "Brand", "name": "Canva" },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://mangelstore.shop/#producto",
+          "priceCurrency": "COP",
+          "price": "16000",
+          "availability": "https://schema.org/InStock",
+          "seller": { "@id": "https://mangelstore.shop/#organization" }
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Facebook SDK -->
@@ -58,7 +172,7 @@
         <li><a href="#testimonios" class="nav__link">Opiniones</a></li>
         <li><a href="#metodos-pago" class="nav__link">Pagos</a></li>
         <li>
-          <a href="https://wa.me/573233818212?text=Hola!%20Quiero%20mi%20cuenta%20CapCut%20PRO%20🔥"
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20comprar%20CapCut%20PRO%20con%20descuento%20(%2420.000)"
              class="btn btn--whatsapp nav__cta" target="_blank" rel="noopener" id="nav-cta">
             💬 WhatsApp
           </a>
@@ -84,10 +198,11 @@
     <!-- Background image -->
     <div class="hero__bg">
       <img
-        src="https://i.ibb.co/tMXvjW0y/Cap-Cut-website-hero-banner-2-K-202608041103.jpg"
-        alt="MangelStore CapCut PRO hero banner"
+        src="https://i.ibb.co/twdzXY4p/Website-hero-banner-creation-20260910230539.jpg"
+        alt="MangelStore Hero Banner"
         class="hero__bg-img"
         loading="eager"
+        fetchpriority="high"
       />
     </div>
 
@@ -135,7 +250,7 @@
         <!-- Live Counter -->
         <div class="hero__live-counter reveal">
           <span class="live-pulse"></span>
-          <span class="counter-card__number" data-target="11000">0</span>+ creadores activos
+          <span class="counter-card__number" data-target="3800">0</span>+ clientes satisfechos
         </div>
 
         <!-- Trust Badges -->
@@ -148,7 +263,7 @@
 
         <!-- CTA Buttons -->
         <div class="hero__cta">
-          <a href="https://wa.me/573233818212?text=Hola!%20Quiero%20mi%20cuenta%20CapCut%20PRO%20🔥"
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20comprar%20CapCut%20PRO%20con%20descuento%20(%2420.000)"
              class="btn btn--whatsapp" target="_blank" rel="noopener" id="hero-whatsapp-cta">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Escríbenos ahora
@@ -190,7 +305,7 @@
       <div class="products-grid">
         <!-- CapCut PRO Card -->
         <div class="product-3d-card glass-card reveal">
-          <div class="product-3d-card__badge">MÁS VENDIDO</div>
+          <div class="product-3d-card__badge product-3d-card__badge--discount">🔥 -20% OFF</div>
           <div class="product-3d-card__icon">🎬</div>
           <h3 class="product-3d-card__name">CapCut PRO</h3>
           <p class="product-3d-card__desc">Todas las funciones premium desbloqueadas. Efectos, filtros, transiciones, exportación 4K, IA avanzada.</p>
@@ -201,10 +316,12 @@
             <li>✦ Compatible iOS y Android</li>
           </ul>
           <div class="product-3d-card__price">
-            <span class="product-3d-card__amount">$25.000</span>
+            <span class="product-3d-card__amount--old">~~$25.000~~</span>
+            <span class="product-3d-card__amount">$20.000</span>
             <span class="product-3d-card__period">/ 28 días</span>
           </div>
-          <a href="https://wa.me/573233818212?text=Hola!%20Quiero%20mi%20cuenta%20CapCut%20PRO%20🔥" 
+          <div class="guarantee-badge">✅ Garantía de 28 días - Si tu cuenta no funciona, te la reemplazamos gratis</div>
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20comprar%20CapCut%20PRO%20con%20descuento%20(%2420.000)" 
              class="btn btn--primary product-3d-card__cta" target="_blank" rel="noopener" id="capcut-cta">
             Obtener CapCut PRO 🔥
           </a>
@@ -226,9 +343,35 @@
             <span class="product-3d-card__amount">$50.000</span>
             <span class="product-3d-card__period">/ 18 meses</span>
           </div>
-          <a href="https://wa.me/573233818212?text=Hola!%20Quiero%20Google%20AI%20PRO%20🤖" 
+          <div class="guarantee-badge">✅ Garantía de 28 días - Si tu cuenta no funciona, te la reemplazamos gratis</div>
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20comprar%20Google%20AI%20PRO" 
              class="btn btn--primary product-3d-card__cta" target="_blank" rel="noopener" id="googleai-cta">
             Obtener Google AI PRO 🤖
+          </a>
+        </div>
+
+        <!-- Canva PRO Card -->
+        <div class="product-3d-card glass-card reveal" style="transition-delay: 0.3s;">
+          <div class="product-3d-card__badge product-3d-card__badge--new">🔥 NUEVO</div>
+          <div class="product-3d-card__icon" style="overflow: hidden; border-radius: 12px; margin-bottom: 1rem; width: 100%; height: 160px;">
+            <img src="https://i.ibb.co/jZM7ymMY/Canva-Pro-subscription-advertise-20260910084534.jpg" alt="Canva PRO" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <h3 class="product-3d-card__name">Canva PRO</h3>
+          <p class="product-3d-card__desc">Lleva tus diseños al siguiente nivel con todas las herramientas premium desbloqueadas.</p>
+          <ul class="product-3d-card__features">
+            <li>✦ Plantillas y recursos ilimitados</li>
+            <li>✦ Estudio Mágico (IA)</li>
+            <li>✦ Activación con tu correo personal</li>
+            <li>✦ Soporte directo por WhatsApp</li>
+          </ul>
+          <div class="product-3d-card__price">
+            <span class="product-3d-card__amount">$16.000</span>
+            <span class="product-3d-card__period">/ mensual</span>
+          </div>
+          <div class="guarantee-badge">✅ Garantía de 28 días - Si tu cuenta no funciona, te la reemplazamos gratis</div>
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20comprar%20Canva%20PRO%20(%2416.000)" 
+             class="btn btn--primary product-3d-card__cta" target="_blank" rel="noopener" id="canva-cta">
+            Obtener Canva PRO 🎨
           </a>
         </div>
       </div>
@@ -332,16 +475,53 @@
           </div>
         </div>
 
-        <!-- Right: Dynamic Counter -->
-        <div class="testimonials__fb-plugin reveal" style="transition-delay: 0.3s;">
+        <!-- Right: Seller Info, Video & Dynamic Counter -->
+        <div class="testimonials__media reveal" style="transition-delay: 0.3s; display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- Seller Info -->
+          <div class="seller-section glass-card">
+            <img 
+              src="https://i.ibb.co/TxX00Jhp/Whats-App-Image-2026-09-11-at-8-03-09-PM.jpg" 
+              alt="Miguel Q. - Fundador de MangelStore"
+              class="seller-photo"
+              loading="lazy"
+            />
+            <div class="seller-info">
+              <h3>Miguel Q.</h3>
+              <p class="seller-title">Fundador de MangelStore</p>
+              <p class="seller-message">"Más de 3.800 clientes confían en nosotros. Tu satisfacción es mi prioridad."</p>
+            </div>
+          </div>
 
+          <!-- Video Testimonial / Presentación -->
+          <div class="video-container glass-card" style="padding: 12px; border-radius: 24px;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 12px; overflow: hidden; background: #000;">
+              <iframe 
+                src="https://www.dailymotion.com/embed/video/xb6o5na?autoplay=1&mute=1&playsinline=1"
+                frameborder="0" 
+                allow="autoplay; fullscreen" 
+                allowfullscreen
+                loading="lazy"
+                title="Video testimonio MangelStore"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              </iframe>
+            </div>
+          </div>
 
           <!-- DYNAMIC COUNTER -->
           <div class="counter-card glass-card reveal" style="transition-delay: 0.4s;">
             <div class="counter-card__icon">🚀</div>
-            <div class="counter-card__number" data-target="11000">0</div>
-            <div class="counter-card__label">Seguidores en la comunidad</div>
+            <div class="counter-card__number" data-target="3800">0</div>
+            <div class="counter-card__label">Clientes en la comunidad</div>
           </div>
+      </div>
+      
+      <!-- Marquee Carousel -->
+      <!-- Las imágenes se inyectan mediante el script build-testimonios.js -->
+      <div class="marquee-container reveal" id="marquee-container" >
+        <div class="marquee-track" id="marquee-track">
+          <img src="testimonios/01-juan-perez.jpg" alt="Testimonio de Juan Perez" loading="lazy">
+          <img src="testimonios/01-juan-perez.jpg" alt="Testimonio de Juan Perez" loading="lazy">
         </div>
       </div>
     </div>
@@ -360,11 +540,7 @@
         <div class="payment-card glass-card reveal">
           <div class="payment-card__icon">🏦</div>
           <h3 class="payment-card__title">Ahorros Bancolombia</h3>
-          <p class="payment-card__detail">Transferencia directa</p>
-          <div class="payment-card__account">
-            <span class="payment-card__account-number" id="bancolombia-num">91283326450</span>
-            <button class="payment-card__copy" onclick="navigator.clipboard.writeText('91283326450'); this.textContent='✅ Copiado'; setTimeout(()=>this.textContent='📋 Copiar', 2000);">📋 Copiar</button>
-          </div>
+          <p class="payment-card__detail">Transferencia directa y segura</p>
           <div class="payment-card__guide">
             <p class="payment-card__guide-title">¿Cómo pagar?</p>
             <ul>
@@ -372,9 +548,9 @@
               <li>Desde <strong>Nequi</strong>: Enviar → A cuenta bancaria → Bancolombia</li>
             </ul>
           </div>
-          <a href="https://wa.me/573233818212?text=Hola%20ya%20tengo%20clara%20toda%20la%20informaci%C3%B3n%2C%20deseo%20pagar%20por%20Bancolombia%2C%20reg%C3%A1lame%20los%20datos%20de%20pago%20por%20favor." 
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20ver%20los%20m%C3%A9todos%20de%20pago%20seguros" 
              class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Si te interesa da click aquí y adquiérelo ahora 🚀
+            Ver método de pago por WhatsApp 🔒
           </a>
         </div>
 
@@ -383,23 +559,89 @@
           <div class="payment-card__icon">🔑</div>
           <h3 class="payment-card__title">Llave Breb</h3>
           <p class="payment-card__detail">Funciona desde cualquier banco</p>
-          <div class="payment-card__account">
-            <span class="payment-card__account-number" id="llave-num">@miguelq055602</span>
-            <button class="payment-card__copy" onclick="navigator.clipboard.writeText('@miguelq055602'); this.textContent='✅ Copiado'; setTimeout(()=>this.textContent='📋 Copiar', 2000);">📋 Copiar</button>
-          </div>
           <div class="payment-card__guide">
             <p class="payment-card__guide-title">¿Cómo pagar?</p>
             <ul>
               <li>Abre tu app bancaria (Bancolombia, Nequi, Daviplata, u otra)</li>
               <li>Busca la opción <strong>"Pagar con llave"</strong> o <strong>"Transferir por alias"</strong></li>
-              <li>Ingresa la llave: <strong>@miguelq055602</strong></li>
               <li>Ingresa el monto del producto y confirma</li>
             </ul>
           </div>
-          <a href="https://wa.me/573233818212?text=Hola%20ya%20tengo%20clara%20toda%20la%20informaci%C3%B3n%2C%20deseo%20pagar%20por%20Llave%20Breb%2C%20reg%C3%A1lame%20los%20datos%20de%20pago%20por%20favor." 
+          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20ver%20los%20m%C3%A9todos%20de%20pago%20seguros" 
              class="btn btn--primary payment-card__cta" target="_blank" rel="noopener">
-            Si te interesa da click aquí y adquiérelo ahora 🚀
+            Ver llave por WhatsApp 🔒
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ SECTION ===== -->
+  <section class="section faq-section" id="faq">
+    <div class="container" style="max-width: 800px;">
+      <div class="section__header reveal">
+        <h2 class="section__title">Preguntas <span class="accent-teal">Frecuentes</span></h2>
+      </div>
+      
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+            <span>¿Es legal comprar cuentas PRO?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div id="faq-1" class="faq-answer" hidden>
+            <p>Sí, todas nuestras cuentas son 100% legales y verificadas. Trabajamos con licencias oficiales y cuentas compartidas legítimas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" style="transition-delay: 0.1s;">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+            <span>¿Qué pasa si mi cuenta deja de funcionar?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div id="faq-2" class="faq-answer" hidden>
+            <p>Tienes garantía total de 28 días. Si ocurre algún problema con tu cuenta, te la reemplazamos inmediatamente y sin costo adicional.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" style="transition-delay: 0.2s;">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+            <span>¿Cuánto tarda la activación?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div id="faq-3" class="faq-answer" hidden>
+            <p>La activación es casi instantánea. Una vez confirmado tu pago vía WhatsApp, te entregamos los accesos en menos de 10 minutos durante nuestro horario de atención.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" style="transition-delay: 0.3s;">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+            <span>¿Ofrecen garantía?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div id="faq-4" class="faq-answer" hidden>
+            <p>Claro que sí. Ofrecemos soporte premium y garantía durante el periodo adquirido (ej. 28 días para la mayoría de los planes mensuales).</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" style="transition-delay: 0.4s;">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+            <span>¿Cómo renuevo mi cuenta?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div id="faq-5" class="faq-answer" hidden>
+            <p>Te enviaremos un recordatorio unos días antes de que caduque tu suscripción. Podrás renovarla rápidamente realizando un nuevo pago a través de nuestro WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal" style="transition-delay: 0.5s;">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+            <span>¿Puedo usarlo en varios dispositivos?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div id="faq-6" class="faq-answer" hidden>
+            <p>Por seguridad de la cuenta, recomendamos su uso en 1 dispositivo principal para evitar bloqueos por inicios de sesión sospechosos. Consulta detalles específicos por aplicación.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -420,7 +662,7 @@
   </footer>
 
   <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-  <a href="https://wa.me/573233818212?text=Hola!%20Quiero%20mi%20cuenta%20CapCut%20PRO%20🔥"
+  <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20necesito%20ayuda%20para%20comprar%20una%20cuenta"
      class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" id="whatsapp-float">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
@@ -587,8 +829,8 @@
       if (isAnimatingGlobal) return;
       isAnimatingGlobal = true;
 
-      // Assuming all counters have the same target for simplicity (11000)
-      const target = 11000;
+      // Assuming all counters have the same target for simplicity
+      const target = 3800;
       const duration = 2000; // ms
       const increment = target / (duration / 16); 
       
@@ -669,6 +911,32 @@
             content_category: 'Digital Products',
             currency: 'COP'
           });
+        }
+    });
+
+    // ============================
+    // FAQ ACCORDION LOGIC
+    // ============================
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        
+        // Close all other FAQs
+        document.querySelectorAll('.faq-question').forEach(otherBtn => {
+          if (otherBtn !== button) {
+            otherBtn.setAttribute('aria-expanded', 'false');
+            const targetId = otherBtn.getAttribute('aria-controls');
+            if (document.getElementById(targetId)) {
+              document.getElementById(targetId).hidden = true;
+            }
+          }
+        });
+
+        // Toggle current FAQ
+        button.setAttribute('aria-expanded', !isExpanded);
+        const target = document.getElementById(button.getAttribute('aria-controls'));
+        if (target) {
+          target.hidden = isExpanded;
         }
       });
     });
