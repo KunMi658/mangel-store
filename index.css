@@ -2186,6 +2186,7 @@ body::after {
   * {
     animation: none !important;
     transition: none !important;
+  }
 }
 
 /* Seller Profile & Marquee */
