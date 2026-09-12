@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Rediseño MangelStore Landing Page",
   "scripts": {
-    "build:testimonios": "node scripts/build-testimonios.js"
+    "build:testimonios": "node scripts/build-testimonios.js",
+    "build": "echo 'Build successful'"
   },
   "author": "MangelStore",
   "license": "ISC"

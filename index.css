@@ -2309,6 +2309,42 @@ body::after {
   display: none;
 }
 
+/* ============================================================
+   FASE 2: CARRUSEL MARQUEE
+   ============================================================ */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem;
+  background: var(--surface-light);
+  padding: 1rem 0;
+  border-radius: 12px;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-track img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .seller-title {
   color: var(--accent-teal);
   font-size: 0.85rem;
