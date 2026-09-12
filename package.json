@@ -2,6 +2,8 @@
   "name": "mangel-store",
   "private": true,
   "scripts": {
+    "check": "node scripts/check.cjs",
+    "audit:browser": "node scripts/audit-browser.cjs",
     "deploy": "wrangler deploy",
     "preview": "wrangler dev",
     "build:testimonios": "node scripts/build-testimonios.js"

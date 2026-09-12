@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <script>document.documentElement.classList.replace('no-js','js');</script>
   <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="MangelStore — Tu tienda digital de confianza. Licencias y cuentas garantizadas de CapCut PRO, Google AI PRO y Canva PRO. Activación inmediata vía WhatsApp." />
   <meta name="theme-color" content="#09090B" />
 
@@ -18,6 +18,7 @@
   <title>MangelStore — CapCut PRO, Google AI PRO & Canva PRO | Licencias Garantizadas</title>
 
   <link rel="stylesheet" href="index.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <!-- Preload hero banner for performance -->
   <link rel="preload" as="image" href="https://i.ibb.co/twdzXY4p/Website-hero-banner-creation-20260910230539.jpg" fetchpriority="high" />
@@ -35,9 +36,7 @@
   fbq('init', '2063758220891810');
   fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2063758220891810&ev=PageView&noscript=1"
-  /></noscript>
+
 
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
@@ -162,20 +161,30 @@
   </script>
 </head>
 <body>
+  <noscript><img alt="" height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2063758220891810&ev=PageView&noscript=1"
+  /></noscript>
   <!-- Facebook SDK -->
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v19.0" nonce="fbSDK"></script>
 
   <!-- ===== NAVIGATION ===== -->
-  <nav class="nav" id="nav">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <nav class="nav" id="nav" aria-label="Navegación principal">
     <div class="container nav__inner">
-      <a href="#" class="nav__logo" aria-label="MangelStore Home">
+      <a href="#fundador" class="nav__logo" aria-label="MangelStore: inicio">
         <img src="https://i.ibb.co/vrdv59m/651909546-25747303941632419-2557870097510574120-n.jpg" alt="MangelStore Logo" class="nav__logo-img" />
         <span class="nav__logo-text">Mangel<span>Store</span></span>
       </a>
 
+      <button class="nav__toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks" hidden>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
       <ul class="nav__links" id="navLinks">
-        <li><a href="#hero" class="nav__link">Inicio</a></li>
+        <li><a href="#fundador" class="nav__link">Inicio</a></li>
         <li><a href="#producto" class="nav__link">Catálogo</a></li>
         <li><a href="#como-funciona" class="nav__link">¿Cómo funciona?</a></li>
         <li><a href="#fundador" class="nav__link">Garantía & Fundador</a></li>
@@ -190,11 +199,7 @@
         </li>
       </ul>
 
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-        <span class="nav__toggle-bar"></span>
-      </button>
+
     </div>
   </nav>
 
@@ -222,6 +227,7 @@
     <span>Servicio verificado y administrado vía Meta WhatsApp Business</span>
   </div>
 
+  <main id="contenido" tabindex="-1">
   <!-- ===== SECCIÓN FUNDADOR & HERO (Respaldo, Autoridad y Valor) ===== -->
   <section class="section founder-section" id="fundador">
     <div class="container founder-grid reveal">
@@ -285,10 +291,10 @@
             loading="eager"
           />
           <div>
-            <h3 class="founder-name">Miguel Q.</h3>
+            <p class="founder-name">Miguel Q.</p>
             <p class="founder-role">Fundador & Operaciones MangelStore</p>
             <div class="founder-counter-pill">
-              👥 <span class="counter-card__number" data-target="3800">3.800</span>+ Clientes en la comunidad
+              👥 <span class="counter-card__number">3.800</span>+ Clientes en la comunidad
             </div>
           </div>
         </div>
@@ -419,7 +425,7 @@
         </div>
 
         <!-- CARD 2: Google AI PRO -->
-        <div class="product-card reveal" style="transition-delay: 0.1s;">
+        <div class="product-card reveal" style="--reveal-delay: 100ms;">
           <!-- Level 1: Visual / Logo / Badge -->
           <div class="product-card__header">
             <div class="product-card__icon-wrap">🤖</div>
@@ -455,7 +461,7 @@
         </div>
 
         <!-- CARD 3: Canva PRO -->
-        <div class="product-card reveal" style="transition-delay: 0.2s;">
+        <div class="product-card reveal" style="--reveal-delay: 150ms;">
           <!-- Level 1: Visual / Logo / Badge -->
           <div class="product-card__header">
             <div class="product-card__icon-wrap product-card__icon-wrap--img">
@@ -545,13 +551,13 @@
           <p class="how-step__desc">Selecciona la herramienta digital que necesitas (CapCut, Google AI o Canva) y haz clic en el botón de WhatsApp correspondiente.</p>
         </div>
 
-        <div class="how-step reveal" style="transition-delay: 0.1s;">
+        <div class="how-step reveal" style="--reveal-delay: 100ms;">
           <span class="how-step__num">PASO 02</span>
           <h3 class="how-step__title">Confirmas tu pago</h3>
           <p class="how-step__desc">Realizas tu transferencia segura vía Bancolombia o Llave Breb (desde Nequi, Daviplata o cualquier banco) y nos envías el comprobante.</p>
         </div>
 
-        <div class="how-step reveal" style="transition-delay: 0.2s;">
+        <div class="how-step reveal" style="--reveal-delay: 150ms;">
           <span class="how-step__num">PASO 03</span>
           <h3 class="how-step__title">Activación en &lt; 5 min</h3>
           <p class="how-step__desc">Recibes tus accesos o activación directa en tu correo. Empiezas a crear de inmediato con respaldo y garantía técnica continua.</p>
@@ -583,7 +589,7 @@
           <p class="review-card__text">"Lo recomiendo muchísimo, muy buen servicio y muy amable. Yo pago cada mes y si pasa cualquier eventualidad lo resuelven de una vez."</p>
         </div>
 
-        <div class="review-card reveal" style="transition-delay: 0.1s;">
+        <div class="review-card reveal" style="--reveal-delay: 100ms;">
           <div class="review-card__header">
             <div class="review-card__avatar">W</div>
             <div>
@@ -594,7 +600,7 @@
           <p class="review-card__text">"Recomendado al 100%. Compro CapCut PRO cada mes y me va súper bien con ellos para editar mis contenidos."</p>
         </div>
 
-        <div class="review-card reveal" style="transition-delay: 0.2s;">
+        <div class="review-card reveal" style="--reveal-delay: 150ms;">
           <div class="review-card__header">
             <div class="review-card__avatar">D</div>
             <div>
@@ -642,7 +648,7 @@
         </div>
 
         <!-- Llave Breb -->
-        <div class="payment-card reveal" style="transition-delay: 0.1s;">
+        <div class="payment-card reveal" style="--reveal-delay: 100ms;">
           <div class="payment-card__icon">🔑</div>
           <h3 class="payment-card__title">Llave Breb</h3>
           <p class="payment-card__detail">Interoperabilidad inmediata desde cualquier entidad bancaria.</p>
@@ -673,68 +679,70 @@
       </div>
       
       <div class="faq-list">
-        <div class="faq-item reveal">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+        <details class="faq-item reveal" name="preguntas">
+          <summary class="faq-question">
             <span>¿Es legal comprar cuentas PRO?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div id="faq-1" class="faq-answer" hidden>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div id="faq-1" class="faq-answer">
             <p>Sí, todas nuestras cuentas son 100% legales y verificadas. Trabajamos con suscripciones oficiales y cuentas legítimas para garantizar estabilidad y continuidad.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item reveal" style="transition-delay: 0.05s;">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+        <details class="faq-item reveal" style="--reveal-delay: 50ms;" name="preguntas">
+          <summary class="faq-question">
             <span>¿Qué pasa si mi cuenta deja de funcionar?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div id="faq-2" class="faq-answer" hidden>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div id="faq-2" class="faq-answer">
             <p>Cuentas con garantía activa durante todo el periodo que hayas adquirido. Si ocurre algún inconveniente técnico, te damos soporte directo de inmediato o reemplazamos tu cuenta sin costo adicional.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item reveal" style="transition-delay: 0.1s;">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+        <details class="faq-item reveal" style="--reveal-delay: 100ms;" name="preguntas">
+          <summary class="faq-question">
             <span>¿Cuánto tarda la activación?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div id="faq-3" class="faq-answer" hidden>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div id="faq-3" class="faq-answer">
             <p>La activación es casi instantánea. Una vez confirmado tu pago vía WhatsApp, te entregamos los accesos en menos de 5 minutos durante nuestro horario de atención.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item reveal" style="transition-delay: 0.15s;">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+        <details class="faq-item reveal" style="--reveal-delay: 150ms;" name="preguntas">
+          <summary class="faq-question">
             <span>¿Ofrecen garantía?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div id="faq-4" class="faq-answer" hidden>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div id="faq-4" class="faq-answer">
             <p>Sí, 100% garantizado durante todo el periodo contratado: CapCut PRO cuenta con garantía completa durante tus 28 días; Google AI PRO con garantía completa durante tus 18 meses; y Canva PRO con garantía completa durante 1 año. Si surge cualquier eventualidad técnica, te damos soporte directo o reemplazo inmediato sin costo adicional.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item reveal" style="transition-delay: 0.2s;">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+        <details class="faq-item reveal" style="--reveal-delay: 150ms;" name="preguntas">
+          <summary class="faq-question">
             <span>¿Cómo renuevo mi cuenta?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div id="faq-5" class="faq-answer" hidden>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div id="faq-5" class="faq-answer">
             <p>Te enviaremos un recordatorio unos días antes de que finalice tu suscripción. Podrás renovarla rápidamente realizando un nuevo pago a través de nuestro WhatsApp oficial.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="faq-item reveal" style="transition-delay: 0.25s;">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+        <details class="faq-item reveal" style="--reveal-delay: 150ms;" name="preguntas">
+          <summary class="faq-question">
             <span>¿Puedo usarlo en varios dispositivos?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div id="faq-6" class="faq-answer" hidden>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div id="faq-6" class="faq-answer">
             <p>Por seguridad y estabilidad de la cuenta, recomendamos su uso en 1 dispositivo principal para evitar bloqueos por inicios de sesión simultáneos sospechosos. Consulta detalles específicos según el software.</p>
           </div>
-        </div>
+        </details>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== META TRUST FOOTER ===== -->
   <footer class="meta-footer">
@@ -758,125 +766,77 @@
 
   <!-- ===== JAVASCRIPT ===== -->
   <script>
-    // ============================
-    // NAVIGATION & MOBILE MENU
-    // ============================
+    // Progressive enhancement: links and FAQ remain usable without this script.
+    const root = document.documentElement;
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
+    const mobileNav = matchMedia('(max-width: 1100px)');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const bars = navToggle.querySelectorAll('.nav__toggle-bar');
-        if (bars.length === 3) {
-          const isActive = navLinks.classList.contains('active');
-          bars[0].style.transform = isActive ? 'rotate(45deg) translate(5px, 5px)' : '';
-          bars[1].style.opacity = isActive ? '0' : '1';
-          bars[2].style.transform = isActive ? 'rotate(-45deg) translate(5px, -5px)' : '';
-        }
-      });
-
-      navLinks.querySelectorAll('.nav__link').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          const bars = navToggle.querySelectorAll('.nav__toggle-bar');
-          bars.forEach(bar => { bar.style.transform = ''; bar.style.opacity = '1'; });
-        });
-      });
+    function closeMenu(restoreFocus = false) {
+      navLinks.classList.remove('active');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
+      if (restoreFocus) navToggle.focus();
     }
-
-    // ============================
-    // SCROLL REVEAL (Fail-Safe)
-    // ============================
-    const revealElements = document.querySelectorAll('.reveal');
-
-    function revealAllFallback() {
-      revealElements.forEach(el => {
-        el.classList.add('visible');
-      });
-    }
-
-    try {
-      if (!('IntersectionObserver' in window)) {
-        revealAllFallback();
-      } else {
-        const revealObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              if (entry.target.querySelector('.counter-card__number')) {
-                startGlobalCounter();
-              }
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-        revealElements.forEach(el => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            el.classList.add('visible');
-            if (el.querySelector('.counter-card__number')) {
-              startGlobalCounter();
-            }
-          } else {
-            revealObserver.observe(el);
-          }
-        });
-      }
-    } catch (e) {
-      revealAllFallback();
-    }
-
-    // Safety timeout: 2500ms
-    setTimeout(() => {
-      revealAllFallback();
-    }, 2500);
-
-    // ============================
-    // DYNAMIC COUNTER ANIMATION
-    // ============================
-    const allCounters = document.querySelectorAll('.counter-card__number');
-    let hasAnimatedCounter = false;
-
-    function startGlobalCounter() {
-      if (hasAnimatedCounter) return;
-      hasAnimatedCounter = true;
-
-      const target = 3800;
-      let current = 3600;
-      const step = 5;
-
-      const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        allCounters.forEach(c => {
-          c.innerText = current.toLocaleString('es-CO');
-        });
-      }, 30);
-    }
-
-    // ============================
-    // SMOOTH SCROLL
-    // ============================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') !== 'true';
+      navLinks.classList.toggle('active', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     });
+    navLinks.addEventListener('click', event => {
+      if (event.target.closest('a')) closeMenu();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu(true);
+    });
+    document.addEventListener('click', event => {
+      if (!event.target.closest('#nav')) closeMenu();
+    });
+    document.getElementById('nav').addEventListener('focusout', event => {
+      if (!event.currentTarget.contains(event.relatedTarget)) closeMenu();
+    });
+    mobileNav.addEventListener('change', () => closeMenu());
+    navToggle.hidden = false;
+    root.classList.add('menu-ready');
+
+    // Native anchors preserve URL/history, keyboard behavior and reduced motion.
+    // Reveal decorates visible content; a failed observer can never hide it.
+    if ('IntersectionObserver' in window && !reducedMotion.matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('reveal-pending');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(element => {
+        if (element.getBoundingClientRect().top > innerHeight) observer.observe(element);
+      });
+    }
+
+    // Keep the contact control above the visible viewport, including keyboards.
+    let viewportFrame = 0;
+    function updateViewport() {
+      cancelAnimationFrame(viewportFrame);
+      viewportFrame = requestAnimationFrame(() => {
+        const viewport = window.visualViewport;
+        const bottom = viewport ? Math.max(0, innerHeight - viewport.height - viewport.offsetTop) : 0;
+        root.style.setProperty('--viewport-bottom', bottom + 'px');
+        root.classList.toggle('is-scrolled', scrollY > 12);
+      });
+    }
+    addEventListener('scroll', updateViewport, { passive: true });
+    window.visualViewport?.addEventListener('resize', updateViewport);
+    window.visualViewport?.addEventListener('scroll', updateViewport);
+    updateViewport();
 
     // ============================
     // META PIXEL EVENT TRACKING
     // ============================
     const whatsappLinks = document.querySelectorAll(
-      '#hero-whatsapp-cta, #founder-hero-cta, #nav-cta, #whatsapp-float, #capcut-cta, #googleai-cta, #canva-cta, #hero-catalog-cta'
+      '#founder-hero-cta, #nav-cta, #whatsapp-float, #capcut-cta, #googleai-cta, #canva-cta'
     );
     whatsappLinks.forEach(link => {
       link.addEventListener('click', function () {
@@ -905,30 +865,6 @@
             content_category: 'Digital Products',
             currency: 'COP'
           });
-        }
-      });
-    });
-
-    // ============================
-    // FAQ ACCORDION LOGIC
-    // ============================
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        
-        document.querySelectorAll('.faq-question').forEach(otherBtn => {
-          if (otherBtn !== button) {
-            otherBtn.setAttribute('aria-expanded', 'false');
-            const targetId = otherBtn.getAttribute('aria-controls');
-            const targetEl = document.getElementById(targetId);
-            if (targetEl) targetEl.hidden = true;
-          }
-        });
-
-        button.setAttribute('aria-expanded', !isExpanded);
-        const target = document.getElementById(button.getAttribute('aria-controls'));
-        if (target) {
-          target.hidden = isExpanded;
         }
       });
     });

@@ -2,7 +2,7 @@
 
 Este proyecto está estructurado bajo la fusión de estilos **"The Jensen Huang"** (cuadrícula técnica, estructura calculada, función sobre forma y estabilidad corporativa) y **"The Steve Jobs"** (espacio en blanco intencional, sans-serif esbelta y eliminación radical de elementos superfluos).
 
-Está optimizado para transmitir máxima autoridad, confianza y conversión inmediata a través de WhatsApp, con métricas perfectas de Core Web Vitals (< 2s en móvil).
+El sitio prioriza la compra por WhatsApp. Las métricas se comprueban con Lighthouse y pruebas de navegador; no son garantías de rendimiento para cada conexión.
 
 ---
 
@@ -23,7 +23,7 @@ Está optimizado para transmitir máxima autoridad, confianza y conversión inme
 5. **Video Vertical (9:16) y Sección Fundador:**
    - Video vertical HTML5 nativo en aspect-ratio 9:16 hosteado en Cloudinary.
    - Loop infinito con reproducción en mute (`autoplay muted loop playsinline`). Cero dependencias de reproductores externos y cero saltos a videos no deseados.
-   - Ubicada estratégicamente **antes** de los testimonios.
+   - Primer bloque de contenido, antes del catálogo y los testimonios.
    - En desktop: 2 columnas con espacio generoso (video izquierda, identidad y pilares derecha).
    - En móvil: apilado con el **video primero**, seguido de la identidad y cita de Miguel Q.
 
@@ -72,3 +72,34 @@ El carrusel cuenta con un comportamiento gobernado:
 ### Regla Permanente de Validación de Scripts
 Todo cambio o edición futura a bloques `<script>` inline en `public/index.html` debe validarse obligatoriamente extrayendo el código y ejecutando `node --check` antes de realizar commit.
 
+
+## Rondas de calidad — 12 de septiembre de 2026
+
+1. Navegación y accesibilidad: anclas nativas, menú progresivo, FAQ nativa, reveal visible por defecto, targets y foco, posición segura de WhatsApp.
+2. Rendimiento y claridad: medios, fuentes, contraste, metadatos y mantenimiento del carrusel.
+3. Verificación final: pruebas de regresión y métricas de producción.
+
+### Mantenimiento de navegación
+
+- Ejecutar `npm run check` antes de **cada commit**. Extrae todos los scripts inline y ejecuta `node --check`, valida JSON-LD, h1 único y destinos de anclas.
+- FAQ usa `details/summary`: teclado y modo sin JavaScript funcionan sin inicialización. No añadir `hidden` a las respuestas.
+- Menú móvil solo se colapsa con `html.menu-ready`, después de registrar sus handlers. Escape cierra y devuelve el foco al botón.
+- `.reveal` siempre es visible. El observer añade una animación de entrada que no oculta contenido si falla JavaScript. `3.800+` permanece estático.
+- Los enlaces internos usan scroll CSS; no interceptarlos con `querySelector(href)` ni forzar smooth desde JS.
+- WhatsApp respeta safe-area y VisualViewport. La página no tiene campos de texto propios; comprobar también con teclado virtual real cuando se introduzcan formularios.
+- `Ver Catálogo` ya no dispara un evento Lead: ese evento corresponde a los CTAs de WhatsApp.
+
+### Pruebas de navegador
+
+Con Playwright disponible (`npm install --no-save --package-lock=false playwright`, solo herramienta local):
+
+```sh
+npm run audit:browser -- http://127.0.0.1:8788 /ruta/a/informes
+npm run audit:browser -- https://mangelstore.shop/ /ruta/a/informes-produccion
+```
+
+El script usa Chrome instalado, perfiles aislados y viewports 375 y 1280. Comprueba anclas, targets, menú/Escape, FAQ con teclado, sonido, teléfono/mensajes y ausencia de errores JS. Incluye escenarios sin JavaScript, fallo del bootstrap y movimiento reducido; guarda JSON y capturas. Las pruebas no envían mensajes.
+
+Baseline Lighthouse 13.4.1 / Chrome 152: móvil P73 / A92 / BP73 / SEO100, LCP 5,2 s, CLS 0; desktop P95 / A92 / BP73 / SEO100, LCP 1,4 s, CLS 0,00117. Perfiles estándar Lighthouse; 375/1280 se comprueban por separado.
+
+Ruido externo observado: Meta Pixel puede generar avisos de cookies de terceros. Cancelaciones `ERR_ABORTED` de peticiones Range del video pueden ocurrir al navegar/cerrar la página; no equivalen a un 404. El favicon ausente quedó corregido con SVG local; fuentes, video y contraste se abordan en la ronda 2.
