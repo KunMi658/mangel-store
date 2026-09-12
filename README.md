@@ -1,33 +1,57 @@
 # MangelStore — Landing Page de Conversión (WhatsApp-First)
 
-Este proyecto está optimizado para generar la máxima conversión a través de WhatsApp, con animaciones sutiles, componentes accesibles, y métricas perfectas (Core Web Vitals).
+Este proyecto está estructurado bajo la fusión de estilos **"The Jensen Huang"** (cuadrícula técnica, estructura calculada, función sobre forma y estabilidad corporativa) y **"The Steve Jobs"** (espacio en blanco intencional, sans-serif esbelta y eliminación radical de elementos superfluos).
+
+Está optimizado para transmitir máxima autoridad, confianza y conversión inmediata a través de WhatsApp, con métricas perfectas de Core Web Vitals (< 2s en móvil).
+
+---
+
+## 🎨 Principios de Diseño Gobernado
+
+1. **Contenedor Controlado:** Máximo `1200px` centrado con padding simétrico.
+2. **Paleta Sobria:** Base grafito (`#09090B`, `#121215`, `#18181B`), bordes neutros de 1px sólido (`#27272A`) y un **único color de acento funcional de compra y acción** (`#22C55E` verde WhatsApp). Cero gradientes agresivos ni estéticas de neón.
+3. **Tarjetas de Catálogo (4 Niveles Estrictos):**
+   - Nivel 1: Identidad visual del software (icono/portada) + badge compacto.
+   - Nivel 2: Título exacto + tipo de suscripción.
+   - Nivel 3: Chips compactos de compatibilidad y entrega inmediata.
+   - Nivel 4: Precio en COP + garantía real específica + CTA de compra (`margin-top: auto` para alturas uniformes).
+   - *Nota:* Las listas detalladas de especificaciones se ubican en su propia matriz técnica debajo del grid.
+4. **Garantías Reales por Producto:**
+   - **CapCut PRO:** Garantía completa durante tus 28 días.
+   - **Google AI PRO:** Garantía completa durante tus 18 meses.
+   - **Canva PRO:** Garantía completa durante 1 año.
+5. **Video Vertical (9:16) y Sección Fundador:**
+   - Video vertical optimizado en aspect-ratio 9:16 con parámetros anti-cola (`queue-enable=false&endscreen-enable=false&sharing-enable=false&ui-start-screen-info=false`).
+   - Ubicada estratégicamente **antes** de los testimonios.
+   - En desktop: 2 columnas con espacio generoso (video izquierda, identidad y pilares derecha).
+   - En móvil: apilado con el **video primero**, seguido de la identidad y cita de Miguel Q.
+
+---
 
 ## 🚀 Despliegue (Cloudflare Pages)
 
 El proyecto está configurado para **Cloudflare Pages** usando un *layout canónico* de Assets Estáticos. 
 
-Toda la página pública vive dentro de la carpeta `/public`.
-Cloudflare leerá el archivo `wrangler.jsonc` en la raíz que apunta al directorio `public/`, haciendo que el despliegue sea extremadamente rápido y saltándose la instalación del framework entero de Wrangler.
+- Toda la página pública vive dentro de la carpeta `/public`.
+- `wrangler.jsonc` en la raíz apunta al directorio `./public`.
+- Cualquier cambio en la rama `master` dispara el despliegue automático en segundos.
 
-Cualquier cambio que empujes a la rama `master` en GitHub se publicará automáticamente en producción en segundos.
+---
 
 ## 🖼️ Mantenimiento: Carrusel de Testimonios
 
-He creado un sistema híbrido escalable para que agregues nuevos testimonios fácilmente cuando quieras reemplazar los placeholders.
+El carrusel cuenta con un comportamiento gobernado:
+- **Sin imágenes en `public/testimonios/`:** El contenedor marquee se mantiene completamente **oculto** (`display: none;`) en el DOM. Cero cajas vacías o placeholders con texto "Testimonio Cliente 1..12". Solo se visualizan los testimonios estáticos destacados.
+- **Con imágenes en `public/testimonios/`:**
+  1. Agrega tus capturas reales (`01-nombre-cliente.jpg`, etc.) a `public/testimonios/`.
+  2. Ejecuta en la terminal:
+     ```bash
+     npm run build:testimonios
+     ```
+  3. El script `scripts/build-testimonios.js` generará automáticamente el marcado HTML con el track duplicado para scroll infinito y removerá el `display: none;`.
+  4. Haz `git commit` y `git push` a `master`.
 
-1. **Sube tus capturas:** Agrega tus capturas de pantalla de los testimonios de Facebook o WhatsApp a la carpeta `public/testimonios/`. (Ej: `01-juan.jpg`, `02-maria.png`).
-2. **Ejecuta el constructor local:** Abre la terminal en la raíz de este proyecto y ejecuta:
-   ```bash
-   npm run build:testimonios
-   ```
-3. **¿Qué hace el script?** El script de Node (`scripts/build-testimonios.js`) escaneará la carpeta `public/testimonios`, extraerá los nombres, e inyectará automáticamente todo el HTML dentro de `public/index.html` para que el carrusel marquee funcione.
-4. **Sube a producción:** Finalmente, solo haz `git commit` y `git push` a tu repositorio. Cloudflare tomará el `public/index.html` actualizado y lo publicará.
-
-## ⚡ Optimizaciones Core Web Vitals (SEO)
-- **LCP:** La imagen principal del Hero Banner tiene `fetchpriority="high"`.
-- **CLS:** Los contenedores de video (Dailymotion) y testimonios tienen el ratio fijo calculado por CSS.
-- **Micro-copy de urgencia:** Agregado el badge de `⚡ Activación en menos de 5 min` a todas las tarjetas de producto.
-- **Data Estructurada (JSON-LD):** Los productos de CapCut, Canva, Google AI, y el acordeón de FAQ están inyectados en la cabecera del sitio para que Google entienda la tienda perfectamente.
+---
 
 ## 🛡️ Estándares de Código y Ruido Conocido
 
