@@ -222,73 +222,150 @@
     <span>Servicio verificado y administrado vía Meta WhatsApp Business</span>
   </div>
 
-  <!-- ===== HERO SECTION (Steve Jobs Clarity & Intentional Whitespace) ===== -->
-  <section class="hero" id="hero">
-    <div class="container hero__content">
-      <!-- Left Column: Concise Value Proposition -->
-      <div class="hero__text">
-        <div class="hero__badge">
+  <!-- ===== SECCIÓN FUNDADOR & HERO (Respaldo, Autoridad y Valor) ===== -->
+  <section class="section founder-section" id="fundador">
+    <div class="container founder-grid reveal">
+      <!-- Columna 1: Video Vertical 9:16 con Toggle de Sonido -->
+      <div class="founder-video-col">
+        <div class="founder-video-wrap">
+          <video 
+            id="founderVideo"
+            class="founder-video"
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            preload="metadata"
+          >
+            <source src="https://res.cloudinary.com/zgqfedz5/video/upload/v1789221703/MI_MODEL.mp4" type="video/mp4">
+            Tu navegador no soporta video HTML5.
+          </video>
+          <button 
+            id="videoSoundBtn" 
+            class="video-sound-btn" 
+            type="button" 
+            aria-label="Activar sonido" 
+            aria-pressed="false"
+          >
+            <svg class="sound-icon sound-icon--muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+            <svg class="sound-icon sound-icon--unmuted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: none;">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="founder-video-caption">🎥 Mensaje de Miguel Q. para la comunidad de MangelStore</p>
+      </div>
+
+      <!-- Columna 2: H1 Único + Subtítulo + Identidad + Cita + Pilares + CTA -->
+      <div class="founder-info-col">
+        <div class="founder-hero-badge">
           <span class="pill-technical">✦ SOFTWARE & LICENCIAS DIGITALES PRO</span>
         </div>
 
-        <h1 class="hero__title">
+        <h1 class="founder-hero-title">
           Tu tienda de software digital <span class="accent-text">con garantía real.</span>
         </h1>
 
-        <p class="hero__subtitle">
+        <p class="founder-hero-subtitle">
           Licencias oficiales y cuentas garantizadas de CapCut PRO, Google AI PRO y Canva PRO. Activación segura e inmediata en menos de 5 minutos vía WhatsApp con soporte directo continuo.
         </p>
 
-        <!-- Sober Pricing Summary -->
-        <div class="hero__pricing-summary">
-          <div class="hero__price-card">
-            <span class="hero__price-tag">-20% OFF</span>
-            <div>
-              <div class="hero__price-name">CapCut PRO</div>
-              <div class="hero__price-amount"><s>$25.000</s> $20.000 <span class="hero__price-period">/ 28 días</span></div>
-            </div>
-          </div>
-          <div class="hero__price-card">
-            <div>
-              <div class="hero__price-name">Google AI PRO</div>
-              <div class="hero__price-amount">$50.000 <span class="hero__price-period">/ 18 meses</span></div>
-            </div>
-          </div>
-          <div class="hero__price-card">
-            <div>
-              <div class="hero__price-name">Canva PRO</div>
-              <div class="hero__price-amount">$16.000 <span class="hero__price-period">/ 1 año</span></div>
+        <div class="founder-profile">
+          <img 
+            src="https://i.ibb.co/TxX00Jhp/Whats-App-Image-2026-09-11-at-8-03-09-PM.jpg" 
+            alt="Miguel Q. - Fundador de MangelStore"
+            class="founder-avatar"
+            width="68"
+            height="68"
+            loading="eager"
+          />
+          <div>
+            <h3 class="founder-name">Miguel Q.</h3>
+            <p class="founder-role">Fundador & Operaciones MangelStore</p>
+            <div class="founder-counter-pill">
+              👥 <span class="counter-card__number" data-target="3800">3.800</span>+ Clientes en la comunidad
             </div>
           </div>
         </div>
 
-        <!-- Hero CTAs -->
-        <div class="hero__cta-group">
-          <a href="#producto" class="btn btn--primary" id="hero-catalog-cta">
-            Ver Catálogo de Software ↓
-          </a>
-          <a href="https://wa.me/573233818212?text=Hola%20MangelStore%2C%20quiero%20adquirir%20una%20cuenta%20PRO"
-             class="btn btn--secondary" target="_blank" rel="noopener" id="hero-whatsapp-cta">
-            Atención por WhatsApp 💬
-          </a>
+        <blockquote class="founder-quote">
+          "Detrás de cada cuenta entregada hay un compromiso personal. Más de 3.800 clientes confían en nosotros porque no improvisamos: respondemos rápido en WhatsApp y garantizamos la continuidad de tu servicio durante todo tu periodo contratado."
+        </blockquote>
+
+        <div class="founder-pillars">
+          <div class="pillar-item">
+            <div class="pillar-icon">🛡️</div>
+            <div>
+              <strong>Licencias y cuentas 100% verificadas</strong>
+              <p>Configuraciones legales y estables, sin bloqueos ni caídas imprevistas.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-icon">⚡</div>
+            <div>
+              <strong>Atención y activación directa en WhatsApp</strong>
+              <p>Tratas directamente con nuestro equipo, listo para asistirte en menos de 5 minutos.</p>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-icon">🔄</div>
+            <div>
+              <strong>Garantía de reemplazo activo</strong>
+              <p>Cuentas respaldadas durante tus 28 días, 18 meses o 1 año según tu suscripción.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Social Proof Counter -->
-        <div class="hero__social-proof reveal">
-          <span class="pulse-dot"></span>
-          <span><strong class="counter-card__number" data-target="3800">3.800</strong>+ creadores y profesionales activos</span>
+        <div class="founder-cta-wrap">
+          <a href="https://wa.me/573233818212?text=Hola%20Miguel%2C%20quiero%20adquirir%20un%20servicio%20digital%20con%20garant%C3%ADa"
+             class="btn btn--whatsapp" target="_blank" rel="noopener" id="founder-hero-cta">
+            Hablar con Miguel por WhatsApp 💬
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BANDA COMPACTA INTRO AL CATÁLOGO ===== -->
+  <section class="catalog-intro" id="hero">
+    <div class="container catalog-intro__inner reveal">
+      <div class="catalog-intro__header">
+        <h2 class="catalog-intro__title">Catálogo de Software</h2>
+        <p class="catalog-intro__subtitle">Tarifas transparentes con activación inmediata en menos de 5 minutos:</p>
+      </div>
+
+      <!-- Sober Pricing Preview (Chips) -->
+      <div class="catalog-intro__pricing">
+        <div class="hero__price-card">
+          <span class="hero__price-tag">-20% OFF</span>
+          <div>
+            <div class="hero__price-name">CapCut PRO</div>
+            <div class="hero__price-amount"><s>$25.000</s> $20.000 <span class="hero__price-period">/ 28 días</span></div>
+          </div>
+        </div>
+        <div class="hero__price-card">
+          <div>
+            <div class="hero__price-name">Google AI PRO</div>
+            <div class="hero__price-amount">$50.000 <span class="hero__price-period">/ 18 meses</span></div>
+          </div>
+        </div>
+        <div class="hero__price-card">
+          <div>
+            <div class="hero__price-name">Canva PRO</div>
+            <div class="hero__price-amount">$16.000 <span class="hero__price-period">/ 1 año</span></div>
+          </div>
         </div>
       </div>
 
-      <!-- Right Column: Visual Product Graphic -->
-      <div class="hero__visual">
-        <div class="hero__visual-card">
-          <img src="https://i.ibb.co/twdzXY4p/Website-hero-banner-creation-20260910230539.jpg"
-               alt="MangelStore Catálogo Digital PRO"
-               class="hero__visual-img"
-               loading="eager"
-               fetchpriority="high" />
-        </div>
+      <div class="catalog-intro__cta-group">
+        <a href="#producto" class="btn btn--primary" id="hero-catalog-cta">
+          Ver Catálogo Completo ↓
+        </a>
       </div>
     </div>
   </section>
@@ -483,89 +560,6 @@
     </div>
   </section>
 
-  <!-- ===== SECCIÓN FUNDADOR & VIDEO VERTICAL (ANTES DE TESTIMONIOS) ===== -->
-  <section class="section founder-section" id="fundador">
-    <div class="container">
-      <div class="section__header reveal">
-        <div class="section-tag">RESPALDO Y AUTORIDAD</div>
-        <h2 class="section__title">Quién está detrás de <span class="accent-text">MangelStore</span></h2>
-        <p class="section__subtitle">Transparencia absoluta: conoce al equipo fundador, nuestras políticas de garantía y cómo respaldamos tu inversión.</p>
-      </div>
-
-      <!-- 2 Columns in Desktop (Video Left, Info Right) / Mobile: Video First -->
-      <div class="founder-grid reveal">
-        <!-- Columna 1: Video Vertical 9:16 -->
-        <div class="founder-video-col">
-          <video 
-            class="founder-video"
-            autoplay 
-            muted 
-            loop 
-            playsinline
-            preload="metadata"
-          >
-            <source src="https://res.cloudinary.com/zgqfedz5/video/upload/v1789221703/MI_MODEL.mp4" type="video/mp4">
-            Tu navegador no soporta video HTML5.
-          </video>
-          <p class="founder-video-caption">🎥 Mensaje de Miguel Q. para la comunidad de MangelStore</p>
-        </div>
-
-        <!-- Columna 2: Identidad + Cita + Pilares de Credibilidad -->
-        <div class="founder-info-col">
-          <div class="founder-profile">
-            <img 
-              src="https://i.ibb.co/TxX00Jhp/Whats-App-Image-2026-09-11-at-8-03-09-PM.jpg" 
-              alt="Miguel Q. - Fundador de MangelStore"
-              class="founder-avatar"
-              loading="lazy"
-            />
-            <div>
-              <h3 class="founder-name">Miguel Q.</h3>
-              <p class="founder-role">Fundador & Operaciones MangelStore</p>
-              <div class="founder-counter-pill">
-                👥 <span class="counter-card__number" data-target="3800">3.800</span>+ Clientes en la comunidad
-              </div>
-            </div>
-          </div>
-
-          <blockquote class="founder-quote">
-            "Detrás de cada cuenta entregada hay un compromiso personal. Más de 3.800 clientes confían en nosotros porque no improvisamos: respondemos rápido en WhatsApp y garantizamos la continuidad de tu servicio durante todo tu periodo contratado."
-          </blockquote>
-
-          <div class="founder-pillars">
-            <div class="pillar-item">
-              <div class="pillar-icon">🛡️</div>
-              <div>
-                <strong>Licencias y cuentas 100% verificadas</strong>
-                <p>Configuraciones legales y estables, sin bloqueos ni caídas imprevistas.</p>
-              </div>
-            </div>
-            <div class="pillar-item">
-              <div class="pillar-icon">⚡</div>
-              <div>
-                <strong>Atención y activación directa en WhatsApp</strong>
-                <p>Tratas directamente con nuestro equipo, listo para asistirte en menos de 5 minutos.</p>
-              </div>
-            </div>
-            <div class="pillar-item">
-              <div class="pillar-icon">🔄</div>
-              <div>
-                <strong>Garantía de reemplazo activo</strong>
-                <p>Cuentas respaldadas durante tus 28 días, 18 meses o 1 año según tu suscripción.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="founder-cta-wrap">
-            <a href="https://wa.me/573233818212?text=Hola%20Miguel%2C%20quiero%20adquirir%20un%20servicio%20digital%20con%20garant%C3%ADa"
-               class="btn btn--whatsapp" target="_blank" rel="noopener">
-              Hablar con Miguel por WhatsApp 💬
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ===== TESTIMONIALS & COMMUNITY (Clean 3-Column Reviews) ===== -->
   <section class="section" id="testimonios">
@@ -882,7 +876,7 @@
     // META PIXEL EVENT TRACKING
     // ============================
     const whatsappLinks = document.querySelectorAll(
-      '#hero-whatsapp-cta, #nav-cta, #whatsapp-float, #capcut-cta, #googleai-cta, #canva-cta, #hero-catalog-cta'
+      '#hero-whatsapp-cta, #founder-hero-cta, #nav-cta, #whatsapp-float, #capcut-cta, #googleai-cta, #canva-cta, #hero-catalog-cta'
     );
     whatsappLinks.forEach(link => {
       link.addEventListener('click', function () {
@@ -938,6 +932,33 @@
         }
       });
     });
+
+    // ============================
+    // VIDEO SOUND TOGGLE (Mute / Unmute)
+    // ============================
+    try {
+      const founderVideo = document.getElementById('founderVideo');
+      const videoSoundBtn = document.getElementById('videoSoundBtn');
+      if (founderVideo && videoSoundBtn) {
+        const mutedIcon = videoSoundBtn.querySelector('.sound-icon--muted');
+        const unmutedIcon = videoSoundBtn.querySelector('.sound-icon--unmuted');
+
+        videoSoundBtn.addEventListener('click', function () {
+          try {
+            founderVideo.muted = !founderVideo.muted;
+            const isMuted = founderVideo.muted;
+            videoSoundBtn.setAttribute('aria-pressed', (!isMuted).toString());
+            videoSoundBtn.setAttribute('aria-label', isMuted ? 'Activar sonido' : 'Silenciar');
+            if (mutedIcon) mutedIcon.style.display = isMuted ? 'block' : 'none';
+            if (unmutedIcon) unmutedIcon.style.display = isMuted ? 'none' : 'block';
+          } catch (err) {
+            console.warn('Video sound toggle error:', err);
+          }
+        });
+      }
+    } catch (e) {
+      console.warn('Sound toggle init error:', e);
+    }
   </script>
 </body>
 </html>

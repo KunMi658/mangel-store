@@ -748,29 +748,39 @@ img {
 }
 
 /* ============================================================
-   FOUNDER & VERTICAL VIDEO SECTION (Before Testimonials)
+   FOUNDER & HERO SECTION (Respaldo, Autoridad y Valor)
    9:16 Aspect Ratio + Generous Spacing
    ============================================================ */
 .founder-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 36px 24px 48px;
 }
 
 .founder-grid {
   display: grid;
   grid-template-columns: 360px 1fr; /* video FIJO, info flexible */
-  gap: 56px;
+  gap: 48px;
   align-items: center;
 }
 
-/* Left Column: 9:16 Vertical Video */
+/* Left Column: 9:16 Vertical Video + Sound Toggle */
 .founder-video-col {
   width: 100%;
   max-width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.founder-video-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background: #000;
 }
 
 .founder-video {
@@ -781,7 +791,51 @@ img {
   border-radius: 12px;
   display: block;
   background: #000;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.video-sound-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background var(--transition-fast), transform var(--transition-fast), border-color var(--transition-fast);
+  animation: soundBtnPulse 3s ease-out 1;
+}
+
+.video-sound-btn:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transform: scale(1.08);
+  border-color: var(--accent-action);
+}
+
+.video-sound-btn:focus-visible {
+  outline: 2px solid var(--accent-action);
+  outline-offset: 2px;
+}
+
+.sound-icon {
+  width: 20px;
+  height: 20px;
+  stroke: #ffffff;
+  pointer-events: none;
+}
+
+@keyframes soundBtnPulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 230, 153, 0.6); }
+  50% { transform: scale(1.12); box-shadow: 0 0 0 10px rgba(0, 230, 153, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 230, 153, 0); }
 }
 
 .founder-video-caption {
@@ -791,40 +845,62 @@ img {
   text-align: center;
 }
 
-/* Right Column: Identity, Quote, Pillars */
+/* Right Column: H1, Subtitle, Identity, Quote, Pillars, CTA */
 .founder-info-col {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+}
+
+.founder-hero-badge {
+  margin-bottom: 2px;
+}
+
+.founder-hero-title {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.founder-hero-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0 0 4px 0;
 }
 
 .founder-profile {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 16px;
+  padding: 4px 0;
 }
 
 .founder-avatar {
-  width: 80px;
-  height: 80px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border-neutral-light);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
 .founder-name {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text-primary);
+  margin: 0;
 }
 
 .founder-role {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--accent-action);
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .founder-counter-pill {
@@ -836,54 +912,106 @@ img {
   color: var(--text-secondary);
   background: var(--bg-surface);
   border: 1px solid var(--border-neutral);
-  padding: 3px 10px;
+  padding: 2px 8px;
   border-radius: 4px;
 }
 
 .founder-quote {
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   color: var(--text-primary);
   font-style: italic;
-  line-height: 1.6;
-  padding: 16px 20px;
+  line-height: 1.5;
+  padding: 12px 18px;
   background: var(--bg-surface);
   border-left: 3px solid var(--accent-action);
   border-radius: 0 var(--card-radius) var(--card-radius) 0;
+  margin: 0;
 }
 
 .founder-pillars {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .pillar-item {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   align-items: flex-start;
 }
 
 .pillar-icon {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .pillar-item strong {
   display: block;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
   margin-bottom: 2px;
 }
 
 .pillar-item p {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.4;
+  line-height: 1.35;
+  margin: 0;
 }
 
 .founder-cta-wrap {
-  margin-top: 8px;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   CATALOG INTRO BAND (Compact Preview before Full Catalog)
+   ============================================================ */
+.catalog-intro {
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-neutral);
+  border-bottom: 1px solid var(--border-neutral);
+  padding: 32px 24px;
+}
+
+.catalog-intro__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.catalog-intro__header {
+  flex: 1 1 260px;
+}
+
+.catalog-intro__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 0 0 6px 0;
+}
+
+.catalog-intro__subtitle {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.catalog-intro__pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.catalog-intro__cta-group {
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -1247,26 +1375,45 @@ html.js .reveal.visible {
   }
 
   /* FOUNDER IN MOBILE: VIDEO FIRST, THEN IDENTITY */
+  .founder-section {
+    padding: 24px 16px 36px;
+  }
+
   .founder-grid {
     grid-template-columns: 1fr;
     justify-items: center;
     text-align: center;
-    gap: 36px;
+    gap: 24px;
   }
 
   .founder-video-col {
     order: 1;
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
+  }
+
+  .founder-video-wrap {
+    max-width: 280px;
+    max-height: 58vh;
   }
 
   .founder-video {
-    max-width: 320px;
+    max-width: 280px;
+    max-height: 58vh;
   }
 
   .founder-info-col {
     order: 2;
     text-align: center;
+    gap: 16px;
+  }
+
+  .founder-hero-title {
+    font-size: clamp(1.6rem, 6vw, 2.1rem);
+  }
+
+  .founder-hero-subtitle {
+    font-size: 0.92rem;
   }
 
   .founder-profile {
@@ -1283,6 +1430,20 @@ html.js .reveal.visible {
 
   .founder-pillars {
     text-align: left;
+  }
+
+  .catalog-intro {
+    padding: 24px 16px;
+  }
+
+  .catalog-intro__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .catalog-intro__pricing {
+    justify-content: center;
   }
 
   .reviews-grid {
